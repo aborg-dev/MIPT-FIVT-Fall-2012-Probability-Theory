@@ -1,0 +1,280 @@
+
+\begin{lemma}[о $\pi$- и $\lambda$- системах]
+	Система $\setF$ подмножеств $\Omega$ является $\sigma$-алгеброй \\
+	$\Leftrightarrow$ она является $\pi$-системой и $\lambda$-системой одновременно.
+	
+	\begin{proof}~
+
+		($\Rightarrow$) очевидно.
+
+		($\Leftarrow$) Для $\forall A \in \setF$
+
+		$\comp{A} = \Omega \setminus A \in \setF$ т.к. $\setF - \lambda$-система ($A \subset \Omega$ и $\Omega \in \setF$, свойство 2)
+		
+		Также имеется замкнутость относительно $\cap$ в $\setF$ 
+		($\setF - \pi$-система) $\Rightarrow \setF$ является алгеброй
+
+		Покажем, что она $\sigma$-алгебра:\\
+		Пусть $\braces{ B_n, n \in \setN }$ - последовательность элементов из $\setF$, 
+		Проверим, что $\bigcup\limits_{n} B_n \in \setF$\\
+		
+		Положим $A_m = \bigcup\limits_{n = 1}^{m} B_n$. \\
+		Тогда $A_m \in \setF$ т.к $\setF$ -- алгебра. Кроме того $A_m \subset A_{m + 1}$ и
+		$A_m \uparrow \bigcup\limits_n B_n = B$ \\
+		
+		Тогда в силу свойства 3) $\lambda$-системы, $B \in \setF$. Значит $F$ -- $\sigma$-алгебра
+		
+	\end{proof}
+\end{lemma}
+
+\begin{example}
+	$\Omega = \braces{ 1, 2, 3, 4 }$\\
+	$\setL = \braces{ \emptyset;\, (1, 2);\, (1, 3);\, 
+	(1, 4);\, (2, 3);\, (2, 4);\, (3, 4);\, \Omega }$\\
+	Тогда $\setL$ -- это $\lambda$-система, но не алгебра.
+\end{example}
+
+\begin{lemma}[о существовании минимальной системы]~
+
+	Пусть $\setM$ -- система подмножеств $\Omega$.\\
+	Тогда существует минимальная(по включению) алгебра 
+	(или $\sigma$-алгебра, $\pi$-система, $\lambda$-система) содержащая $\setM$ и обозначаемая
+	$\setL(\setM)\; (\sigma(\setM), \pi(\setM), \lambda(\setM))$
+\end{lemma}
+
+\begin{proof}
+	Рассмотрим $\setF^* = 2^{\Omega}$ -- дискретная $\sigma$-алгебра. 
+	Она является алгеброй($\sigma$-алгеброй, $\pi$-системой, $\lambda$-системой), 
+	содержащей $\setM$, т.е множество интересующих нас систем не пусто.
+	
+	Рассмотрим $\alpha(\setM)\; (\sigma(\setM), \pi(\setM), \lambda(\setM))$ 
+	-- пересечение всех алгебр ($\sigma$-алгебр, $\pi$-систем, $\lambda$-систем), содержащих $\setM$. 
+	Тогда $\alpha(\setM)\; (\sigma(\setM), \pi(\setM), \lambda(\setM))$ тоже будет являться алгеброй 
+	($\sigma$-алгеброй, $\pi$-системой, $\lambda$-системой), содержащей $\setM$.
+
+	При этом она будет минимальной по включению.
+\end{proof}
+
+\begin{example}~
+
+	\begin{enumerate}
+		\item 
+			Пусть $\setM = \condset{(a, b)}{a < b \in \setR}$ -- система интервалов.\\
+			Тогда минимальная $\sigma$-алгебра, содержащая $\setM$, 
+			называется борелевской $\sigma$-алгеброй на прямой и обозначается $B(\setR)$\\
+			\begin{equation*}
+				B(\setR) = \sigma(\setM)
+			\end{equation*}
+				
+		\item 
+			Рассмотрим в $\setR^n$ систему подмножеств вида
+			\begin{align*}
+				&\setM = \condset{B_1 \times \ldots \times B_n}{B_i \in B(\setR)}\\
+				&\setM = \condset{(x_1, \ldots, x_n) \in \setR^n}{x_i \in B_i \quad \forall i = 1 \ldots n}
+			\end{align*}
+			Тогда минимальная $\sigma$-алгебра, содержащая $\setM$ называется 
+			\emph{болевеской $\sigma$-алгеброй} в $\setR^n$  и обозначается $B(\setR^n)$
+			 
+		\item 
+			$\setR^{\infty} = \condset{ (x_1, x_2, \ldots )}{x_n \in \setR \quad \forall n }$ 
+			-- числовые последовательности.\\
+			Для $\forall n\; \forall B_n \in B(\setR^n)$ введем
+			\begin{equation*}
+				\setM_n(B_n) = \condset{\vec{x} \in \setR^{\infty}, \vec{x} = (x_1, x_2, \ldots )}
+														{(x_1, \ldots, x_n) \in B_n}
+			\end{equation*} -- цилиндр с основанием $B_n$
+		
+		Минимальная $\sigma$-алгебра, содержащая все цилиндры, называется борелевской 
+		$\sigma$-алгеброй в $\setR^{\infty}$ и обозначается $B(\setR^{\infty})$. Формально:
+		\begin{equation*}
+			B(\setR^{\infty}) = \sigma(\condset{\setM_n(B_n)}{n \in \setN, B_n \in B(\setR^n)})
+		\end{equation*}
+	\end{enumerate}
+\end{example}
+
+\begin{theorem}[о монотонных классах]~
+
+	Пусть $\setM$ -- $\pi$-система на $\Omega$. Тогда $\lambda(\setM) = \sigma(\setM)$.
+
+\end{theorem}
+
+\begin{proof}
+	Заметим, что $\sigma(\setM)$ -- $\sigma$-алгебра, содержащая $\setM \Rightarrow \sigma(\setM)$ -- 
+	$\lambda$-система, содержащая $\setM \Rightarrow \lambda(\setM) \subset \sigma(\setM)$ 
+	в силу минимальности.
+	
+	Согласно лемме о $\pi$- и $\lambda$-системах для того, чтобы доказать 
+	$\sigma(\setM) \subset \lambda(\setM)$, достаточно проверить, что $\lambda(\setM)$ 
+	является $\pi$-системой.
+	
+	Действительно, тогда $\lambda(\setM)$  будем $\sigma$-алгеброй, 
+	содержащей $\setM \Rightarrow \sigma(\setM) \subset \lambda(\setM)$
+	
+	Рассмотрим следующую систему подмножеств:
+	\begin{equation*}
+		\setM_1 = \condset{ B \in \lambda(\setM)}
+			{\forall A \in \setM \hookrightarrow A \cap B \in \lambda(\setM)}
+	\end{equation*}
+	Покажем, что $\setM_1$, является $\lambda$-системой,
+	
+	\begin{enumerate}
+		\item 
+			$\Omega \in \setM_1 ?$ Для $\forall A \in \setM$\\
+			$\Omega \cap A = A \in \setM \subset \lambda(\setM) \Rightarrow \Omega \in \setM$.
+		
+		\item 
+			Пусть $A, B \in \setM_1$ и $A \subset B$. 
+			Верно ли, что $B \setminus A \in \setM_1 ?$
+
+			Пусть $C \in \setM$. Тогда $(B \setminus A) \cap C = (B \cap C) \setminus (A \cap C)$
+
+			Причем $A \setminus C \subset B \setminus C \Rightarrow$ по свойству 2) $\lambda$-системы\\
+			получаем, что $(B \setminus A) \cap C \in \lambda(M) \Rightarrow B \setminus A \in \setM_1$
+			
+		\item 
+			Пусть $\braces{B_n, n \in \setN}$ -- последовательность из $\setM_1$, 
+			причем $B_n \uparrow B$. Верно ли, что $B \in \setM_1 ?$
+
+			Для $\forall A \in \setM \quad (B_n \cap A) \uparrow (B \cap A)$. 
+			Но $(B_n \cap A) \in \lambda(\setM) \Rightarrow (B \cap A) \in \lambda(\setM)$ 
+			по свойству 3) $\lambda$-системы. $\Rightarrow B \in \setM_1$.
+
+			Мы показали, что $\setM_1$ -- $\lambda$-система.
+
+			В силу того, что $\setM$ -- $\pi$-система, $\setM \subset \setM_1 
+			\Rightarrow \lambda(\setM) \subset \setM_1.$ 
+			В силу минимальности. Но $\setM_1 \subset \lambda(\setM)$ по построению. \\
+			Следовательно, $\lambda(\setM) = \setM_1$, т.е. 
+			$\forall A \in \lambda(\setM) \quad \forall B \in \setM \quad A \cap B \in \lambda(\setM)$\\
+			
+			Рассмотрим систему
+			\begin{equation*}
+				\setM_2 = \condset{B \in \lambda(\setM)}
+					{\forall A \in \lambda(\setM) \; A \cap B \in \lambda(\setM))}
+			\end{equation*}
+
+			Точно также проверяется, что $\setM_2$ -- это $\lambda$-система.
+			Тогда $\sigma(\setM) \subset \setL$.\\
+			В силу минимальности $\lambda(\setM) \subset \setL$. 
+			По теореме $\sigma(\setM) = \lambda(\setM) \subset \setL$
+	\end{enumerate}
+\end{proof}
+
+\mysection{Независимость событий}
+
+\begin{definition}
+	События $A$ и $B$ на вероятностном пространстве $(\Omega, \setF, P)$ 
+	называются \emph{независимыми}, если
+	\begin{equation*}
+		P(A \cap B) = P(A) \, P(B)
+	\end{equation*}
+\end{definition}
+
+\begin{exercise}
+	Пусть $A$ и $B$ независимы. Тогда независимыми будут и такие пары:\\
+	$\comp{A}, B \quad A, \comp{B} \quad \comp{A}, \comp{B}$
+\end{exercise}
+ 
+\begin{definition}
+	Набор событий $A_1 \ldots A_n$ называются попарно независимыми, если $\forall i \neq j$ \\
+	$A_i$ независимо с $A_j$.
+\end{definition}
+
+\begin{definition}
+	События $A_1 \ldots A_n$ называются независимыми в совокупности, если $\forall k \leq n, 
+	\forall i_1, \ldots i_k : 1 \leq i_1 < \ldots < i_k \leq n$ выполнено:
+	\begin{equation*}
+		P(A_{i_1} \cap \ldots \cap A_{i_k}) = P(A_{i_1}) \ldots P(A_{i_k})
+	\end{equation*}
+\end{definition}
+
+\begin{definition}
+	Системы событий $\setM_1 \ldots \setM_n, \; \setM_i \subset \setF$ 
+	называются \emph{независимыми в совокупности}, 
+	если $\forall A_1 \in \setM_1, \ldots, A_n \in \setM_n$ 
+	события $A_1 \ldots A_n$ -- независимы в совокупности.
+\end{definition}
+
+\begin{lemma}[критерий независимости $\sigma$-алгебр]~
+
+	Пусть $\setM_1$ и $\setM_2$ -- $\pi$-системы в $\setF$.
+	Тогда $\sigma(\setM_1)$ и $\sigma(\setM_2)$ независимы 
+	$\Leftrightarrow \setM_1$ и $\setM_2$ -- независимы.
+
+\end{lemma}
+
+\begin{proof}~
+
+	$(\Rightarrow)$ очевидно из определения
+
+	$(\Leftarrow)$ используем принцип подходящих множеств.
+
+	Рассмотрим такую систему:
+	\begin{equation*}
+		\setL_1 = \condset{ A \in \sigma(\setM_2)}{A \text{ независимо с } \setM_1}
+	\end{equation*}
+	
+	Проверим, что $\setL_1$ -- это $\lambda$-система.
+	\begin{enumerate}
+		\item 
+			$\Omega \in \setL_1?$
+
+			$P(\Omega \cap A) = P(A) = P(A) \, P(\Omega) 
+			\Rightarrow $ независимы $\Rightarrow \Omega \in \setL_1$ 
+
+		\item 
+			Пусть $A, B \in \setL_1$, причем $A \subset B$. \quad $B \setminus A \in \setL_1 ?$\\
+			Пусть $C \in \setM_1$. Тогда
+			\begin{align*}
+				&P(B \setminus A \cap C) = P((B \cap C) \setminus (A \cap C)) =
+				P(B \cap C) - P(A \cap C) = \\
+				&P(B) \, P(C) - P(A) \, P(C) = (P(B) - P(A)) P(C) = P(B \setminus A) \, P(C) \\
+				&\Rightarrow B \setminus A \text{ независимо с } C 
+				\Rightarrow \text{ независимо с } \setM_1 \Rightarrow B \setminus A \in \setL_1
+			\end{align*}
+
+		\item
+			Пусть $B_n \uparrow B, B_n \in \setL_1$. Верно ли, что $B \in \setL_1$?
+
+			Да:\\
+			Пусть $A \in \setM_1$. Тогда $(B_n \cap A) \uparrow (B \cap A)$.
+			\begin{align*}
+				&P(B \cap A) = \expl{по теореме о непрерывности меры} = \lim_n P(B_n \cap A) =\\
+				&= \expl{$B_n \in \setL_1 \Rightarrow B$ независимо с $A$} = \lim_n P(B_n) P(A) =
+				\expl{по теореме о непрерывности} = P(B) P(A)\\
+				&\Rightarrow B \text{ и } A \text{ непрерывны } \Rightarrow B \in \setL_1
+			\end{align*}
+
+			Значит $\setL_1$ -- $\lambda$-система. По условию мы знаем, что $\setM_2$ независима
+			с $\setM_1 \Rightarrow \setM_2 \subset \setL_1 \Rightarrow$ по следствию из теоремы 
+			о монотонности $\Rightarrow \sigma(\setM_2) \subset \setL_1
+			\Leftrightarrow$ т.е. $\sigma(\setM_2)$ независимо с $\setM_1$ \\
+
+			Рассмотрим по аналогии 
+			\begin{align*}
+				\setL_2 = \condset{A \in \setF}{A \text{ независимо с } \sigma(\setM_2)}
+			\end{align*}
+
+			Аналогично $\Rightarrow \setL_2$ -- $\lambda$-система.
+
+			По теореме о монотонных классах, в силу того, что $\setM_1 \subset \setL_2$,
+			получаем, что $\sigma(\setM_1) \subset \setL_2 
+			\Rightarrow \sigma(\setM_1)$ независимо с $\sigma(\setM_2)$.
+		
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	Пусть $\setM_1 \ldots \setM_n$ -- $\pi$-системы в $\setF$. Тогда $\setM_1, \ldots, \setM_n$
+	независимы в совокупности $\Leftrightarrow \sigma(\setM_1), \ldots \sigma(\setM_n)$ 
+	независимы в совокупности.
+\end{corollary}
+
+\begin{definition}
+	Пусть $\braces{\setM_{\alpha}}_{\alpha \in \mathfrak{A}}$ -- произвольный набор систем событий из 
+	$\setF$. Тогда этот набор называется независимым в совокупности, 
+	если $\forall n \, \forall \alpha_1 \ldots \alpha_n \in \mathfrak{A},\; \alpha_i \neq \alpha_j,$ 
+	системы $\setM_{\alpha_1} \ldots \setM_{\alpha_n}$ независимыми в совокупности, 
+	тоесть любой конечный поднабор независим.
+\end{definition}
+

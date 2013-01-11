@@ -2,4 +2,4 @@
 *.aux
 *.pdf
 *.dvi
-output
+src/output

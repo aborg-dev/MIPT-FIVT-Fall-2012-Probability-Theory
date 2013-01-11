@@ -1,0 +1,400 @@
+
+\begin{lemma}[Неравенство Колмогорова]~
+
+  Пусть $\xi_1 \ldots \xi_n$ -- независимые с.в.
+
+  $E \xi_i = 0$ и $E \xi_i^2 < +\infty$. 
+  Обозначим $S_k = \xi_1 + \ldots + \xi_k$
+
+  Тогда
+  \begin{align*}
+    P\pars{\max_{1 \leq k \leq n}|S_k| \geq \epsilon} \leq \frac{E S_n^2}{ \epsilon^2}
+  \end{align*}
+\end{lemma}
+
+\begin{proof}
+  Обозначим $A = \braces{\max\limits_{1 \leq k \leq n}{|S_k|} \geq \epsilon }$
+    
+  Разделим $A$ на следующие части:
+
+  $A_k = \{|S_k| \geq \epsilon $ и $|S_i| < \epsilon$ для $i = 1 \ldots k - 1\}$.
+
+  Тогда $A_k \cap A_j = \emptyset$ при $k \neq j$ и $A = \bigsqcup\limits_{k = 1}^{n} A_k$
+
+  Рассмотрим 
+  \begin{align*}
+    E S_n^2 \geq E(S_n^2 I_A) = E \sum_{k = 1}^{n} (S_n^2 I_{A_k}) = \sum_{k = 1}^n E(S_n^2 I_{A_k})
+  \end{align*}
+
+  \begin{align*}
+    E S_n^2 I_{A_k} &= E(S_k + \xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k} =\\
+    &= E S_k^2 I_{A_k} + 2 E S_k (\xi_{k + 1} + \ldots + \xi_n) I_{A_k} + 
+    E(\xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k}
+  \end{align*}
+
+  Но $I_{A_k}$ завиcит от $S_1 \ldots S_k \Rightarrow S_k I_{A_k}$ 
+  не зависит от $\xi_{k + 1} \ldots \xi_n$
+
+  Следовательно, второе слагаемое
+
+  \begin{align*}
+    &E S_k I_{A_k} (\xi_{k + 1} + \ldots + \xi_n) = 
+    E S_k E(\xi_{k + 1} + \ldots \xi_n) = 0 \quad (\forall i: E \xi_i = 0)\\
+    &\Rightarrow E S_n^2 I_{A_k} = E S_k^2 I_{A_k} + E(\xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k} 
+    \geq E S_k^2 I_{A_k} \geq \epsilon^ 2 E I_{A_k} = \epsilon^2 P(A_k)
+  \end{align*}
+
+  т.к $S_k \geq \epsilon$ на $A_k$.
+
+  В итоге
+  \begin{align*}
+    E S_n^2 \geq \sum_{k = 1}^{n} E (S_n^2 I_{A_k}) \geq 
+    \epsilon^2 \sum_{k = 1}^{n} P(A_k) = \epsilon^2 P(A)
+  \end{align*}
+\end{proof}
+
+\begin{proof}[Док-во теоремы Колмогорова-Хинчина]~
+
+  Обозначим $S_n = \sum\limits_{k = 1}^{n} \xi_k$. 
+  Тогда $\sum\limits_{k = 1}^{\infty} \xi_k$ сходится п.н. 
+  $\Leftrightarrow$ (критерий Коши) $\Leftrightarrow$
+
+  $\Leftrightarrow$ $\{ S_n,\; n \in \setN \}$ фундаментальна с вероятностью 1 
+  $\Leftrightarrow$ (критерий фундаментальности) $\Leftrightarrow$
+
+  $\Leftrightarrow$ для $\forall \epsilon > 0: P(\sup\limits_{k \geq n} |S_k - S_n| \geq \epsilon) 
+  \todown{n \to \infty} 0$
+
+  Оценим её: Рассмотрим.
+  \begin{align*}
+    &P(\sup_{k \geq n}{|S_k - S_n| \geq \epsilon}) = 
+    P(\bigcup_{k \geq n} \{ |S_k - S_n| \geq \epsilon \}) = \expl{непрерывность вер. меры} =\\
+    &= \lim_{N \to \infty} P(\bigcup_{k = n}^{N + n} \{ |S_k - S_n| \geq \epsilon \})
+    = \lim_{N \to \infty} P(\max_{1 \leq k \leq N} |S_{k + n} - S_n| \geq \epsilon)
+    = \expl{нер-во Колмогорова} \leq \\
+    &\leq \lim_{N \to \infty} \frac{E(S_{n + N} - S_n)^2}{\epsilon^2} 
+    = \lim_{N \to \infty} \frac{\sum_{k = n + 1}^{n + N} E \xi_k^2}{\epsilon^2} 
+    = \frac{\sum_{k = n + 1}^{\infty} E \xi_k^2}{\epsilon^2} \todown{n \to \infty} 0
+  \end{align*}
+
+  т.к. это остаток сходящегося ряда (по условию $\sum\limits_n E \xi_n^2 < +\infty$)
+
+\end{proof}
+
+
+
+\begin{lemma}[Тёплиц]~
+
+  Пусть последовательность $x_n \to x,\; \{a_n,\; n \in \setN\}$ т.ч. $a_n \geq 0$ и 
+  $b_n = \sum\limits_{j = 1}^{n} a_j \uparrow +\infty$.
+
+  Тогда 
+  \begin{align*}
+    \frac{1}{b_n} \sum\limits_{k = 1}^{n} a_j x_j \todown{n \to \infty} x
+  \end{align*}
+  
+  \begin{proof}
+    Пусть $\epsilon > 0$ -- произвольное. Возьмём $n_0 = n_0(\epsilon)$ т.ч. 
+    $\forall n > n_0: |x - x_n| < \frac{\epsilon}{2}$
+
+    Далее, возьмем $n_1 > n_0$, т.ч. 
+    \begin{align*}
+      \frac{1}{b_{n_1}} \sum_{j = 1}^{n_0} a_j |x_j - x| < \frac{\epsilon}{2}
+    \end{align*}
+
+    Тогда для $\forall n > n_1$
+    \begin{align*}
+      &\walls{\frac{1}{b_n} \sum_{j = 1}^{n} a_j x_j - x} = 
+      \walls{\frac{1}{b_n} \sum_{j = 1}^{n} a_j (x_j - x)} \leq \\
+      &\leq \frac{1}{b_n} \sum_{j = 1}^{n_0} a_j |x_j - x| + 
+      \frac{1}{b_n} \sum_{j = n_0 + 1}^{n_1} a_j |x_j - x| \leq 
+      \frac{\epsilon}{2} + \frac{\epsilon}{2}\; \frac{1}{b_n} \sum_{j = n_0 + 1}^{n} a_j 
+      \leq \epsilon
+    \end{align*}
+  \end{proof}
+
+\end{lemma}
+
+\begin{lemma}[Кронекер]~
+
+  Пусть ряд $\sum\limits_n x_n$ сходится.
+
+  $\{a_n,\; n \in \setN\}$ -- некоторая последовательность $a_n \geq 0$ т.ч. 
+  $b_n = \sum\limits_{j = 1}^{n} a_j \uparrow +\infty$
+
+  Тогда 
+  \begin{align*}
+    \frac{1}{b_n} \sum\limits_{j = 1}^{n} b_j x_j \todown{n \to \infty} 0
+  \end{align*}
+
+  \begin{proof}
+    Обозначим $S_n = x_1 + \ldots + x_n$. Тогда $\{ S_n \}$ сходится.
+    
+    \begin{align*}
+      \sum_{j = 1}^{n} b_j x_j = \sum_{j = 1}^{n} b_j (S_j - S_{j - 1}) 
+      = b_n S_n - \sum_{j = 1}^{n} S_{j - 1} (b_j - b_{j - 1}) = 
+      b_n S_n - \sum_{j = 1}^{n} S_{j - 1} a_j
+    \end{align*}
+
+    Делим на $b_n$:
+    \begin{align*}
+      &\frac{1}{b_n} \sum_{j = 1}^{n} b_j x_j = S_n - \frac{1}{b_n} \sum_{j = 1}^{n} S_{j - 1} a_j\\
+      &S_n \todown{n \to \infty} \sum_{n = 1}^{\infty} x_n = S
+    \end{align*}
+
+    А по лемме Тёплица:
+    \begin{align*}
+      \frac{1}{b_n} \sum_{j = 1}^{n} S_{j - 1} a_j \todown{n \to \infty} S
+    \end{align*}
+
+    $\Rightarrow$ их разность стремится к нулю.
+  \end{proof}
+
+\end{lemma}
+
+\begin{theorem}[Усиленный закон больших чисел в форме Колмогорова-Хинчина]~
+
+  Пусть $\{ \xi_n,\; n \in \setN \}$ -- независимые с.в. т.ч. $D \xi_n < +\infty \forall n$.
+
+  Пусть последовательность $\{ b_n,\; n \in \setN \}$ т.ч. $b_n > 0, b_n \uparrow +\infty$ и
+  \begin{align*}
+    \sum_{n = 1}^{\infty} \frac{D \xi_n}{b_n^2} < +\infty
+  \end{align*}
+
+  Обозначим $S_n = \xi_1 + \ldots \xi_n$.
+  Тогда 
+  \begin{align*}
+    \boxed{\frac{S_n - E S_n}{b_n} \toae 0} \quad (\text{при } n \to \infty)
+  \end{align*}
+
+  \begin{proof}
+    Рассмотрим 
+    \begin{align*}
+      \frac{S_n - E S_n}{b_n} = 
+      \frac{1}{b_n} \sum_{k = 1}^{n} b_k \pars{\frac{\xi_k - E \xi_k}{b_k}}
+    \end{align*}
+
+    Далее с.в. $\eta_k = \frac{\xi_k - E \xi_k}{b_k}$ -- независимы и $E \eta_k = 0$
+
+    Тогда
+    \begin{align*}
+      \sum_{k = 1}^{\infty} E \eta_k^2 = 
+      \sum_{k = 1}^{\infty} E \pars{\frac{\xi_k - E \xi_k}{b_k}}^2 = 
+      \sum_{k = 1}^{\infty} \frac{D \xi_k}{b_k^2} < +\infty
+    \end{align*}
+
+    $\Rightarrow$ по теореме о сходимости ряда, ряд $\sum\limits_k \eta_k$ сходится п.н.
+    
+    Но по лемме Кронекера 
+    $\frac{1}{b_n} \sum\limits_{k = 1}^{n} b_k \pars{\frac{\xi_k - E \xi_k}{b_k}}$ 
+    сходится к нулю для всех $\omega$, для которых
+    \begin{align*}
+      \sum_{k = 1}^{\infty} \frac{\xi_k - E \xi_k}{b_k} = \sum_{k = 1}^{\infty} \eta_k
+    \end{align*}
+    сходится. А этот ряд сходится.
+
+    \begin{align*}
+      \Longrightarrow \frac{S_n - E S_n}{b_n} \toae 0
+    \end{align*}
+  \end{proof}
+\end{theorem}
+
+\begin{corollary}
+  Пусть $\{ \xi_n,\; n \in \setN \}$ -- независимые случайные величины т.ч. 
+  $D \xi_n \leq C \; \forall n \in \setN$
+
+  Обозначим $S_n = \xi_1 + \ldots + \xi_n$.
+
+  Тогда 
+  \begin{align*}
+    \frac{S_n - E S_n}{n} \toae 0
+  \end{align*}
+
+  Если, к тому же, $E \xi_i = a \forall i$, то 
+  \begin{align*}
+    \frac{S_n}{n} \toae a
+  \end{align*}
+
+  \begin{proof}
+    Возьмем $b_n = n \Rightarrow b_n > 0,\; b_n \uparrow +\infty$.
+
+    Тогда
+    \begin{align*}
+      \sum_n \frac{D \xi_n}{b_n^2} = \sum_n \frac{D\xi_n}{n^2} \leq 
+      \sum_n \frac{c}{n^2} < +\infty
+    \end{align*}
+
+    Согласно УЗБЧ
+    \begin{align*}
+      \frac{S_n - E S_n}{n} \toae 0,\quad (n \to \infty)
+    \end{align*}
+
+    Если же $E \xi_n = a$, то $E S_n = n - a$
+    \begin{align*}
+      \frac{S_n}{n} - a \toae 0 \Leftrightarrow \frac{S_n}{n} \toae a
+    \end{align*}
+
+  \end{proof}
+\end{corollary}
+
+Смысл УЗБЧ: обоснование феномена устойчивости частот появлений событий в последовательностях независимых экспериментов.
+
+Если $\xi_i = I\{ \text{событие $A$ произошло в $i$- том эксперимете} \}$ то
+
+\begin{align*}
+  \nu_n(A) = \frac{\xi_1 + \ldots + \xi_n}{n} \toae E \xi_1 = P(A)
+\end{align*}
+
+\mysection{Предельный переход под знаком $E$}
+
+Вопрос: $\xi_n \toae \xi \Rightarrow  E\xi \rightarrow E\xi$?
+
+\begin{theorem}[О монотонной сходимости]~
+
+  Пусть $\{\xi_n,\; n \in \setN\}, \xi, \eta$ -- с.в.
+
+  \begin{enumerate}
+    \item 
+      Если $\xi_n \uparrow \xi,\; \xi_n \geq \eta, \forall n \in \setN$ и
+      $E \eta > -\infty,$ то $E\xi = \lim\limits_{n \to \infty} E \xi_n$
+      
+    \item 
+      Если $\xi_n \downarrow \xi, \xi_n \leq \eta, \forall n \in \setN$ и $E \eta < +\infty,$
+      то $E\xi = \lim\limits_{n \to \infty} E \xi_n$
+  \end{enumerate}
+
+\end{theorem}
+
+\begin{theorem}[лемма Фату]~
+
+  Пусть $\{\xi_n, n \in \setN\}, \eta$ -- с.в.,\; $E\eta $ - конечно
+
+  \begin{enumerate}
+    \item
+      Если $\xi_n \geq \eta, \forall n \in \setN$, то \quad
+      $\limdown_n E \xi_n \geq E \limdown_n \xi_n$ 
+
+    \item
+      Если $\xi_n \leq \eta, \forall n \in \setN$, то \quad
+      $\limup_n E \xi_n \leq E \limup_n \xi_n$ 
+
+    \item
+      Если $|\xi_n| \leq \eta, \forall n \in \setN$, то \quad
+      $E \limdown_n \xi_n \leq \limdown_n E \xi_n \leq \limup_n E\xi_n \leq E \limup_n \xi_n$ 
+  \end{enumerate}
+
+  \begin{proof}~
+
+    \begin{enumerate}
+      \item
+        Обозначим $\psi_n = \inf\limits_{k \geq n} \xi_k$. Тогда
+        $\psi_n \uparrow \limdown_n \xi_n$ и $\psi_n \geq \eta, \forall n \in \setN$.
+
+        По теореме о монотонной  сходимости получаем
+        \begin{align*}
+          \lim_n E \psi_n = E  \limdown_n \xi_n
+        \end{align*}
+
+        Осталось заметить, что 
+        \begin{align*}
+          E \limdown_n \xi_n = \lim_n E \psi_n = \limdown_n E \psi_n \leq \limdown_n E \xi_n
+        \end{align*}
+
+        т.к. $\xi_n \geq \psi_n, \forall n$
+
+      \item
+        Следует из $1)$ заменой $\xi_n$ на $- \xi_n$
+
+      \item
+        Сразу следует из $1)$ и $2)$
+    \end{enumerate}
+  \end{proof}
+\end{theorem}
+
+\begin{theorem}[Лебега о мажорируюмой сходимости]~
+
+  Пусть $\{ \xi_n,\; n \in \setN \}$ -- последовательность с.в. т.ч. $\xi_n \toae \xi$
+  и для $\forall n : |\xi_n| \leq \eta$, причем $E \eta$ конечно.
+
+  Тогда $E \xi = \lim\limits_n E\xi_n$ и, более того,
+  $E |\xi_n - \xi| \to 0$ (т.е. $\xi_n \toup{L^1} \xi)$
+
+  \begin{proof}
+    Заметим, что $\xi = \lim\limits_n \xi_n = \limdown_n \xi_n = \limup_n \xi_n$ п.н.
+
+    $\Rightarrow$ по лемме Фату
+
+    \begin{align*}
+      &E \xi = E \limdown_n \xi_n \leq \limdown_n E \xi_n \leq \limup_n E\xi_n \leq 
+      E \limup_n \xi_n = E\xi\\
+      &\Rightarrow \lim_n E\xi_n = E\xi
+    \end{align*}
+
+    Конечность $E \xi$ следует из того, что $|\xi| \leq \eta$ п.н. и конечности $E \eta$
+
+    Для обоснования сходимости в $L^1$ достаточно взять $\psi_n = |\xi_n - \xi|$. 
+
+    Тогда $|\psi_n| \leq 2 |\eta|$ п.н.
+    и $\psi_n \toae 0 \Rightarrow E \psi_n \to 0$
+
+  \end{proof}
+\end{theorem}
+
+\mysection{Усиленный закон больших чисел для с.в. с конечным математическим ожиданием}
+
+\begin{definition}
+  Пусть $\{ A_n,\; n \in \setN \}$ -- последовательность событий. 
+
+  Тогда событием $\{ A_n \text{ бесконечное число} \}$ = $\{ A_n \text{ б.ч} \}$ наз. событие, 
+  заключающееся в том, что произошло бесконесное число событий в последовательности
+  $\{A_n,\; n \in \setN\}$. Формально:
+  \begin{align*}
+    \{ A_n \text{ б.ч.} \} = \bigcap_{n = 1}^{\infty} \bigcup_{k \geq n} A_k
+  \end{align*}
+\end{definition}
+
+\begin{lemma}[Борель-Кантелли]~
+
+  \begin{enumerate}
+
+    \item
+      Если $\sum\limits_n P(A_n) < +\infty$, то $P(A_n \text{ б.ч.}) = 0$
+
+    \item
+      Если $\sum\limits_n P(A_n) = +\infty$ и все $A_n$ - независимые, то $P(A_n \text{ б.ч.}) = 1$
+
+  \end{enumerate}
+
+  \begin{proof}~
+
+    \begin{enumerate}
+      \item
+        \begin{align*}
+          P(A_n \text{ б.ч.}) = P\pars{\bigcap_{n = 1}^{\infty} \bigcup_{k \geq n} A_k} = 
+          \lim_{n \to \infty} P\pars{\bigcup_{k \geq n} A_k}
+          \leq \lim_{n \to \infty} \sum_{k \geq n} P(A_k) = 0
+        \end{align*}
+
+      \item
+        \begin{align*}
+          P(A_n \text{ б.ч.}) = \lim_{n \to \infty} P\pars{\bigcup_{k \geq n} A_k} = 
+          \lim_{n \to \infty} P\pars{1 - \bigcap_{k \geq n} \comp{A}_k}
+        \end{align*}
+
+        Но
+        \begin{align*}
+          &P\pars{\bigcap_{k \geq n} \comp{A}_n} = \expl{непр. вер. меры} =
+          \lim_{N \to \infty} P\pars{\bigcap_{k \geq n}^{N} \comp{A}_k} = 
+          \lim_{N \to \infty} \prod_{k = n}^{N} P(\comp{A}_k) = \\
+          &= \lim_{N \to \infty} \prod_{k = n}^{N} (1 - P(A_k)) 
+          \leq \lim_{N \to \infty} \prod_{k = n}^{N} e^{-P(A_k)} = 
+          \lim_{N \to \infty} e^{-\sum\limits_{k = n}^N P(A_k)} = 
+          e^{-\sum\limits_{k = n}^{+\infty} P(A_k)} = 0
+        \end{align*}
+        т.к. $\forall n : \sum\limits_{k = n}^{\infty} P(A_k) = +\infty$\\
+
+        $\Rightarrow P(A_n \text{ б.ч.}) = 1$
+    \end{enumerate}
+  \end{proof}
+\end{lemma}
+

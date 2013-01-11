@@ -1,0 +1,326 @@
+
+\bigtitle{Примеры многомерных функций распределения}
+
+\begin{example}
+	\begin{enumerate}
+		\item 
+			Пусть $F_1(x_1), \ldots, F_n(x_n)$ -- одномерные функции распределения. 
+			Тогда
+			\begin{equation*}
+				F(x_1, \ldots, x_n) = F_1(x_1) \ldots F_n(x_n)
+			\end{equation*}
+			--- многомерная функция распределения в $\setRn$.\\
+						
+			Заметим, что 
+			\begin{align*}
+				\Delta_{a_1 b_1}^1 \ldots \Delta_{a_n b_n}^n F(x_1, \ldots x_n) = 
+				\prod\limits_{k = 1}^n (F_k(b_k) - F_k(a_k)))	\geq 0
+			\end{align*}
+			
+			Если $F_i(x_i) = x_i$, для $\forall i = 1 \ldots n$ при $x_i \in [0, 1]$, то
+			\begin{equation*}
+				F(x_1, \ldots x_n) =
+				\begin{cases}
+					0, &\text{если } \exists i : x_i < 0\\					
+					\prod\limits_{i=1}^n (x_i I\{x_i \in [0, 1]\} + I\{x_i \geq 1\}), &\text{иначе}
+				\end{cases}
+			\end{equation*}
+			
+			Такая $F$ соответствует для меры Лебега на $[0, 1]^n$.
+		
+		\item 
+			Пусть $f(t_1, \ldots t_n),\; t_i \in \setR$ - функция в $\setRn$ т.ч\\
+			$\int\limits_{\setR^n} f(t_1, \ldots, t_n)\; d t_1 \ldots d t_n = 1$ и 
+			$f(t_1, \ldots, t_n) \geq 0$\\
+			
+			Тогда
+			\begin{align*}
+				&F(x_1, \ldots x_n) = \int\limits_{-\infty}^{x_1} \ldots 
+															\int\limits_{-\infty}^{x_n} f(t_1 \ldots t_n)\; d t_1 \ldots d t_n\\
+			\end{align*}
+			--- многомерная функция распределения
+			
+			\begin{align*}
+				&\Delta_{a_1 b_1}^1 \ldots \Delta_{a_n b_n}^n F(x_1, \ldots x_n) = \int\limits_{a_1}^{b_1} \ldots 									\int\limits_{a_n}^{b_n} f(t_1 \ldots t_n)\; d t_1 \ldots d t_n \geq 0		
+			\end{align*}
+			
+			В этом случае $f(t_1 \ldots t_n)$ называется плотностью функции распределения $F(x_1 \ldots x_n)$ (или просто плотностью). Ясно, что 
+			\begin{align*}
+				f(x_1 \ldots x_n) = \frac{\partial^n}{\partial x_1 \ldots \partial x_n} F(x_1 \ldots x_n)\\
+			\end{align*}
+			
+	\end{enumerate}
+\end{example}
+
+
+\bigtitle{Вероятностные меры в $\setRinf = \setR^{\setN}$}
+
+Пусть $P$ -- вероятностная мера в ($\setRinf, B(\setRinf))$.
+Для $\forall B_n \in B(\setRn)$ введем
+\begin{align*}
+	\setF_n (B_n) = \condset{\vec{x} \in \setRinf}{(x_1, \ldots, x_n) \in B_n}
+\end{align*}
+--- цилиндр с основанием $B_n$
+
+Тогда $P_n(B_n) = P(\setF_n(B_n))$ является вероятностной мерой в ($\setRinf, B(\setRinf)$).
+При этом имеет место свойство согласованности:
+
+\begin{align*}
+	P_{n + 1}(B_n \times \setR) = P(\setR)
+\end{align*}
+
+\begin{theorem}[Колмоговора, о мерах в $\setRinf$]~
+
+	Пусть $\forall n$ задана вероятностная мера $P_n$  в $(\setRinf, B(\setRinf))$, 
+	причем для $\{ P_n, n \in \setN \}$ выполнено свойтсво согласованности.\\
+	Тогда $\exists !$ вероятностная мера $P$ в $(\setRinf, B(\setRinf))$,
+	т.ч. $\forall n \, \forall B_n \in B(\setRn)$:
+	\begin{align*}
+		P_n(B_n) = P(\setF_n(B_n))
+	\end{align*}
+\end{theorem}
+
+\mysection{Случайные величины в дискретных вероятностных пространствах}
+
+Пусть $(\Omega, P)$ -- дискретное вероятностное пространство.
+
+\begin{definition}
+	Отображение $\xi\colon \Omega \to \setR$ называется \emph{случайной величиной}.
+
+	Т.к $\Omega$ не более чем счетно, 
+	то $\xi$ принимает не более чем счетное число значений ($a_1, a_2, \ldots$)
+
+	Введем события $A_i = \condset{\omega}{\xi(\omega) = a_i}$ 
+	-- состоит в том, что $\xi$ приняло значение $a_i$.
+	
+	$p_i = P(A_i) = P(\xi = a_i) \quad$ и $\quad \sum\limits_i p_i = 1 = \sum\limits_i P(A_i)$
+\end{definition}
+
+\begin{definition}
+	Набор значений $(a_1, a_2, \ldots)$ и вероятностей $(p_1, p_2, \ldots)$, с которыми эти значения принимаются, вместе образуют распределение случайной величины $\xi$.
+\end{definition}
+
+\begin{remark}
+	$\xi_1 \ldots \xi_n$ -- случайные величины, $\phi\colon \setRn \to \setR$ -- функция, 
+	то $\phi(\xi_1, \ldots, \xi_n)$ -- тоже случайная величина.
+\end{remark}
+
+\begin{definition}
+	Пусть $\xi$ -- случайная величина со значениями $(a_1, a_2, \ldots )$ и 
+	$\eta$ -- случайная величина со значениями $(b_1, b_2, \ldots)$. 
+	Случайные величины $\xi$ и $\eta$ называются независимыми, если\\
+	$\forall i \, \forall j$ события $\{ \xi = a_i \}$ и  $\{ \eta = b_j \}$ независимы, т.е 
+	\begin{align*}
+		P(\xi = a_i, \eta = b_j) := P(\{ \xi = a_i \} \cap \{ \eta = b_j \}) = P(\xi = a_i) P(\eta = b_j)
+	\end{align*}
+\end{definition}
+
+\begin{definition}
+	Пусть $\xi_1, \ldots \xi_n$ - случайные величины, 
+	$\xi_i$ принимает значения $(a_1^{(i)}, a_2^{(i)}, \ldots)$. 
+	Тогда $\xi_1, \ldots \xi_n$ называют \emph{независимыми в совокупности}(взаимно независимыми), 
+	если $\forall j_1, \ldots j_n$ выполнено:
+	\begin{align*}
+		P(\xi_1 = a_{j_1}^{(1)}, \ldots, \xi_n = a_{j_n}^{(n)}) = 
+		\prod\limits_{k = 1}^n P(\xi = a_{j_k}^{(k)})
+	\end{align*}
+\end{definition}
+
+\begin{example}~
+	\begin{enumerate}
+		\item 
+			Бросок игральной кости.
+
+			$\eta$ -- число очков, выпавшее на кости.\\
+			Распределение $\eta$ -- равномерное на $\{ 1, \ldots 6 \}$\\
+			
+		\item 
+			Пусть $A \subset \Omega$ -- событие. Тогда случайная величина
+			\begin{equation*}
+				I_A(\omega) =
+				\begin{cases}
+					1, & \omega \in A\\
+					0, & \omega !\in A
+				\end{cases}		
+			\end{equation*}
+			Называется индикатором события $A.$\\
+			Другое обозначение: $I\{ A \}$.
+		
+		\item 
+			$\xi$ называется \emph{биномиальной случайной величиной}, если
+			она принимает значения $\{1, 2, \ldots, n\}$ и
+			\begin{align*}
+				P(\xi = k) = \comb{n}{k} p^k (1 - p)^{n - k},\; k = 0, \ldots, n
+			\end{align*}
+
+			Обозначение: $\xi \sim Bin(n, p)$
+		
+		\item 
+			$\xi$ называется пуассоновской случайной величиной, $\xi \sim Pois(\lambda)$, 
+			если $\xi$ принимает значения в $\setZ_+$ и
+			\begin{align*}
+				P(\xi = k) = \frac{\lambda^k e^{-\lambda}}{k!}, k \in \setZ_+
+			\end{align*}
+			$\lambda > 0$ -- параметр распределения.
+	\end{enumerate}
+\end{example}
+
+\begin{exercise}~
+	\begin{enumerate}
+		\item $I_A$ и $I_B$ независимы $\Leftrightarrow$ $A$ и $B$ независимы
+		\item 
+			$\xi_1, \ldots, \xi_n$ -- с.в. Тогда они независимы в совокупности 
+			$\Leftrightarrow$ $\forall x_1, \ldots, x_n \in \setR$:
+			\begin{align*}
+				P(\xi_1 = x_1, \ldots, \xi_n = x_n) = \prod\limits_{k = 1}^{n} P(\xi_k = x_k)
+			\end{align*}
+
+		\item
+			Если $\xi$ и $\eta$ -- независимы, и $\xi \sim Bin(n, p)$, $\eta \sim Bin(m, p)$, то
+			$\xi + \eta \sim Bin(n + m, p)$.
+
+		\item
+			Если $\xi \sim Pois(\lambda_1)$, $\eta \sim Pois(\lambda_2)$, то
+			$\xi + \eta \sim Pois(\lambda_1 + \lambda_2)$.
+
+	\end{enumerate}
+\end{exercise}
+
+\begin{definition}
+	Пусть $\xi$ -- случайная величина. Её \emph{математическим ожиданием} называют 
+	\begin{align*}
+		E \xi = \sum_{\omega \in \Omega} \xi(\omega) P(\omega)
+	\end{align*}
+	Если ряд в правой части сходится абсолютно.
+\end{definition}
+
+\begin{example}
+	В классической модели $\Omega$ -- конечно и $P(\omega) = 
+	\frac{1}{|\Omega|}$ для $\forall \omega \in \Omega$. Тогда
+	\begin{align*}
+		E \xi = \sum_{\omega \in \Omega} \frac{\xi(\omega)}{|\Omega|} = 
+		\frac{1}{|\Omega|} \sum\limits_{\omega \in \Omega} \xi(\omega)
+	\end{align*}
+	--- среднее арифметическое значений.
+\end{example}
+
+\begin{lemma}[свойства математического ожидания]~
+
+	\begin{enumerate}
+		\item Линейность 
+			\begin{align*}
+				E(a \xi + b \eta) = a E \xi + b E \eta, \quad a, b \in \setR
+			\end{align*}
+			
+		\item Пусть $\eta$ принимает значения $(a_1, a_2, \ldots)$. Тогда
+			\begin{align*}
+				E \xi = \sum_i a_i P(\xi = a_i)
+			\end{align*}
+		
+		\item Пусть $\xi$ - принимает значения $(a_1, a_2, \ldots)$\\
+			Тогда для $\forall$ функции $\phi(x)$:
+			\begin{align*}
+				E \phi(\xi) = \sum_i \phi(a_i) P(\xi = a_i)
+			\end{align*}
+		
+		\item Если $\xi \leq \eta$, то $E \xi \leq E \eta$
+		
+		\item Если $\xi$ и $\eta$ - независимы, то
+			\begin{align*}
+				E \xi \eta = E \xi E \eta
+			\end{align*}
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}~
+
+	\begin{enumerate}
+		\item Очевидно из определения.
+		\item 
+			\begin{align*}
+				&E \xi = \sum_{\omega \in \Omega} \xi(\omega) P(\omega) = 
+				\sum_i \sum_{\omega : \xi(\omega)	= a_i} \xi(\omega) P(\omega) = \\
+				&\sum_i \sum_{\omega : \xi(\omega) = a_i} a_i P(\omega) = 
+				\sum_i a_i \sum_{\omega : \xi(\omega) = a_i} P(\omega) = \sum_i a_i P(\xi = a_i)
+			\end{align*}
+			
+		\item Аналогично 2)
+		
+		\item Очевидно из определения.
+		
+		\item \begin{align*}
+				&E \xi \eta = \sum_{\omega \in \Omega} \xi(\omega) \eta(\omega) P(\omega) = 
+				\sum_{i, j} \sum_{\substack{\omega : \xi(\omega) = a_i\\\;\eta(\omega) = b_j}} 
+				\eta(\omega) \xi(\omega) P(\omega) = \sum\limits_{i, j} a_i b_j 
+				\sum\limits_{\substack{\omega : \xi(\omega) = a_i\\\;\eta(\omega) = b_j}} P(\omega) =\\
+				&= \sum\limits_{i, j} a_i b_j P(\xi = a_i, \eta = b_j) = \expl{независимость} = 
+				\sum\limits_{i, j} a_i b_j P(\xi = a_i) P(\eta = b_j) = \\
+				& = \pars{ \sum\limits_i a_i P(\xi = x_i) } \pars{ \sum\limits_j b_j P(\eta = b_j) } 
+				= E \xi E \eta
+			\end{align*}						
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	Для матожидания $E \xi$ (и $E \phi(\xi)$) достаточно знать распределение случайной величины $\xi$.
+\end{corollary}
+
+\begin{definition}
+	$E \xi^k$ -- \emph{момент порядка $k$} случайной величины $\xi$ ($k$-й момент)\\
+	
+	$E(\xi - E\xi)^k$ -- \emph{центральный момент порядка $k$} случайной величины $\eta$ 
+	($k$-й центральный момент).\\
+	
+	$E\xi(\xi - 1) \ldots (\xi - k + 1)$ -- \emph{факториальный момент порядка $k$}
+	 случайной величины $\eta$, $k \in \setN$\\
+	
+	$D\xi = E(\xi - E\xi)^2$ -- \emph{дисперсия} случайной величины $\xi$
+\end{definition}
+
+\begin{lemma}[свойства дисперсии]~
+	\begin{enumerate}
+		\item $D\xi = E\xi^2 - (E\xi)^2$
+		\item $D\xi \geq 0$
+		\item $D(c\, \xi) = c^2 D\xi$
+		\item $D\xi = 0 \Leftrightarrow P(\xi = E\xi) = 1$
+	\end{enumerate}
+\end{lemma}
+
+\begin{statement}
+	Если $\xi$ -- биномиальная: $\xi \sim Bin(n, p)$, то $D\xi = np (1 - p)$
+\end{statement}
+
+\begin{definition}
+	Пусть $\xi$ и $\eta$ - две случайные величины. Ковариацией случайных величин $\xi$ и $\eta$ называется
+	\begin{align*}
+		\cov(\xi, \eta) = E(\xi - E\xi) (\eta - E\eta)
+	\end{align*}
+	Если $\cov(\xi, \eta) = 0$, то $\xi$ и $\eta$ называются некоррелированными.
+\end{definition}
+
+\begin{enumerate}
+	\item $\cov(\xi, \eta) = E \xi \eta - E \xi E \eta$
+
+	\item Если $\xi$ и $\eta$ независимы, то они не коррелируют. (обратное неверно!)
+
+	\item $D\xi = \cov(\xi, \xi)$
+\end{enumerate}
+
+\begin{statement}
+	\begin{equation*}
+		D(\xi + \eta) = D\xi + D\eta + 2 \cov(\xi, \eta)
+	\end{equation*}
+\end{statement}
+
+\begin{proof}
+	\begin{align*}
+		&D(\xi + \eta) = E(\xi + \eta - E(\xi + \eta))^2 = E(\xi - E\xi)^2 + E(\eta - E\eta)^2
+		+ 2 E(\xi - E\xi)(\eta - E\eta) = \\ 
+		&= D\xi + D\eta + 2 \cov(\xi, \eta)
+	\end{align*}
+\end{proof}
+
+\begin{corollary}
+	Если $\xi$ и $\eta$ независимы, то $D(\xi + \eta) = D\xi + D\eta$
+\end{corollary}
+
