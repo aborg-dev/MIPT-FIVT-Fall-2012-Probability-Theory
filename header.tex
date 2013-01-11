@@ -1,0 +1,134 @@
+% header.tex - default header for tex documents!
+
+\documentclass[11pt,a4paper]{article}
+%\documentclass[11pt,a4paper,oneside]{book}
+\frenchspacing
+\pagestyle{plain}
+
+\usepackage{a4wide}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\hfuzz=18pt
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setRn}{\mathbb{R}^n}
+\newcommand{\setRinf}{\mathbb{R}^{\infty}}
+\newcommand{\setC}{\mathbb{C}}
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setM}{\mathcal{M}}
+\newcommand{\setL}{\mathcal{L}}
+\newcommand{\setA}{\mathcal{A}}
+\newcommand{\setF}{\mathcal{F}}
+
+\newcommand{\walls}[1]{\left | #1 \right |} % |smth_vertically_large|
+\newcommand{\pars}[1]{\left( #1 \right)} % (smth_vertically_large)
+\newcommand{\class}[1]{[ #1 ]} % [smth_vertically_large]
+\newcommand{\braces}[1]{\left\{ #1 \right\}} % {smth_vertically_large}
+
+\newcommand{\condset}[2]{\braces{\, #1 \mid #2 \,}} % definition of set with condition
+
+\newcommand{\expl}[1]{\walls{\text{#1}}} % explanation inside formula
+
+%\newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
+\newcommand{\combus}[2]{\binom {#1}{#2}}
+\newcommand{\combru}[2]{C_{#1}^{#2}}
+\newcommand{\comb}[2]{\combru{#1}{#2}}
+\newcommand{\limup}{\varlimsup\limits} % limit superior 
+\newcommand{\limdown}{\varliminf\limits} % limit inferior
+\newcommand{\toup}[1]{\xrightarrow{#1}}
+\newcommand{\toae}{\toup{\text{\,п.н.}}} % almost everywhere convergence designation
+\newcommand{\todown}[1]{\xrightarrow[#1]{}}
+
+\newcommand{\equp}[1]{\stackrel{#1}{=}}
+
+\newcommand{\mysum}{\sum\limits}
+
+\newcommand{\conj}[1]{\overline{#1}} % complex conjugation
+\newcommand{\comp}[1]{\overline{#1}} % set complement
+
+\DeclareMathOperator{\cov}{cov}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+{\hbox{$\mathsurround=0pt #1$}}{}} % a\hm=b makes "=" carriable to the next line with duplication of the sign
+
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem-star}{Теорема}
+
+\newtheorem{statement}{Утверждение}
+\newtheorem*{statement-star}{Утверждение}
+
+\newtheorem{corollary}{Следствие}
+\newtheorem*{corollary-star}{Следствие}
+
+\newtheorem{lemma}{Лемма}
+\newtheorem*{lemma-star}{Лемма}
+
+\newtheorem{designation}{Обозначение}
+\newtheorem*{designation-star}{Обозначение}
+
+\newtheorem*{designations}{Обозначения}
+
+\newtheorem{proposition}{Предложение}
+\newtheorem*{proposition-star}{Предложение}
+
+\newtheorem*{property-star}{Свойство}
+\newtheorem{property}{Свойство}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Замечание}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Задача}
+\newtheorem{exercise}{Упражнение}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem*{definition-star}{Определение}
+
+\theoremstyle{definition}
+\newtheorem{example}{Пример}
+\newtheorem*{example-star}{Пример}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Решение}
+
+%Style
+
+\newcommand{\bigtitle}[1]{\title{\textbf{\underline{#1}}}}
+\newcommand{\boldtitle}[1]{\title{\textbf{#1}}}
+
+\newcommand{\mysection}[1]{\setcounter{secnumdepth}{-1} \section{#1} \setcounter{secnumdepth}{2} \setcounter{subsection}{0} \setcounter{corollary}{0} \setcounter{definition}{0} \setcounter{theorem}{0}}
+
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\newcommand{\tocstyle}{\setlength{\parindent}{0ex} \setlength{\parskip}{0ex}}
+\newcommand{\mainstyle}{\setlength{\parindent}{0ex} \setlength{\parskip}{1ex}}
+
+\mainstyle
+\setcounter{secnumdepth}{2}

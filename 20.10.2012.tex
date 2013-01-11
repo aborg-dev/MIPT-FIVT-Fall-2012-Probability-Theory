@@ -1,0 +1,331 @@
+  
+\mysection{Случайные элементы}
+                  
+\begin{definition}
+	Пусть ($\Omega, \setF$) и $(E, \mathcal{E})$ -- два измеримых пространства. 
+  Отображение $X\colon \Omega \to E$ называется случайным элементом,
+   если оно является $\setF$ - измеримым. (или $\setF \setminus \mathcal{E}$ - измеримым) 
+   т.е $\forall B \in \mathcal{E}$
+  \begin{align*}
+    \{ x \in B \} = X^{-1}(B) = \condset{\omega}{X(\omega) \in B} \in \setF.
+  \end{align*}
+\end{definition}
+
+\begin{definition}~
+
+  Если $(E, \mathcal{E})$ = $(\setR, B(\setR))$, то случайный элемент $X$ 
+  называется \emph{случайной величиной}.\\
+
+  Если $(E, \mathcal{E})$ = $(\setRn, B(\setRn))$, то $X$ называется \emph{случайным вектором}.\\
+\end{definition}
+
+\begin{lemma}[достаточное условие измеримости отображения]~
+
+  Пусть $(\Omega, \setF)$ и $(E, \mathcal{E})$ -- два измеримых пространства, 
+  $X\colon \Omega \to E$.
+  Пусть $\setM \subset \mathcal{E}$ таково, что $\sigma(\setM) = \mathcal{E}$. 
+  Тогда $X$ является случайным элементом $\Leftrightarrow$ для $\forall B \in \setM$
+
+  \begin{align*}
+    X^{-1}(B) = \condset{\omega}{X(\omega) \in B} \in \setF
+  \end{align*}
+
+\end{lemma}
+
+\begin{proof}~
+
+  $(\Rightarrow)$ очевидно из определения\\
+
+  $(\Leftarrow)$ \\
+  Рассмотрим систему множеств
+  \begin{align*}
+    D = \condset{B \in \mathcal{E}}{X^{-1}(B) \in \setF}
+  \end{align*}
+  Убедимся в том, что $D$ -- это $\sigma$-алгебра. 
+  Операция праобраз сохраняет все теоретико-множественные операции.
+
+  \begin{align*}
+    &X^{-1}\pars{\bigcup_{\alpha} D_{\alpha}} = \bigcup_{\alpha} X^{-1} (D_{\alpha})\\\\
+    &X^{-1}\pars{\bigcap_{\alpha} D_{\alpha}} = \bigcap_{\alpha} X^{-1} (D_{\alpha})\\\\
+    &X^{-1}\pars{B \setminus A} = X^{-1} (B) \setminus X^{-1} (A)
+  \end{align*}
+
+  Тогда
+  \begin{enumerate}
+    \item 
+      $X^{-1}(D) = \Omega \in \setF \Rightarrow E \in D$
+
+    \item  
+      $X^{-1}\pars{\bigcup\limits_{n = 1}^{\infty} D_n} = \{ D_n \in D \} = 
+      \bigcup\limits_{n = 1}^{\infty} X^{-1}(D_n) \in \setF 
+      \Rightarrow \bigcup\limits_{n = 1}^{\infty} D_n \in D$
+
+    \item
+      Если $B, A \in D$, то
+      $X^{-1}(B \setminus A) = X^{-1}(B) \setminus X^{-1}(A) \in \setF 
+      \Rightarrow B \setminus A \in D$
+  \end{enumerate}
+
+  $D$ -- $\sigma$-алгебра и по условию $\setM \subset D$
+  $\Rightarrow$ в силу минимальности $\sigma(\setM) = \mathcal{E} \subset D$\\
+  т.е $\forall  B \in \mathcal{E} : X^{-1}(B) \in \setF$
+  и, стало быть, $X$ -- случайный элемент.
+\end{proof}
+
+\begin{corollary}~
+
+  \begin{enumerate}
+    \item 
+      $X$ -- случайная величина на $(\Omega, \setF)$
+      $\Leftrightarrow \forall x \in \setR :
+       \{ X \leq x \} = 
+      \condset{\omega}{X(\omega) \leq x} \in \setF$
+
+    \item $X = (X_1, \ldots, X_n)$ -- случайный вектор на $(\Omega, \setF)$
+          $\Leftrightarrow \forall i : X_i$ -- случайная величина.
+  \end{enumerate}
+
+\end{corollary}
+
+\begin{proof}~
+
+  $(\Rightarrow)$ 1) и 2) очевидно из определения случайных величин и векторов\\
+
+  $(\Leftarrow)$ \nolinebreak
+  \begin{enumerate}
+    \item 
+      Рассмотрим систему $\setM = \condset{(-\infty; x]}{x \in \setR}$.\\
+      Тогда  $\sigma(\setM) = B(\setR)$. По условию $X^{-1} (B) \in \setF$ для 
+      $\forall B \in \setM$. По лемме о достаточном условии измеримости получим, 
+      что $X$ -- случайная величина.
+
+    \item 
+      Рассмотрим систему $\setM = \condset{B_1 \times \ldots B_n}{B_i \in B(\setR)}$\\
+      Тогда $\sigma(\setM) = B(\setRn)$
+      \begin{align*}
+        &X^{-1} (B_1 \times \ldots \times B_n) = 
+        \condset{\omega}{X_1(\omega) \in B_1, \ldots, X_n(\omega) \in B_n}
+        = \bigcap_{i = 1}^{n} X^{-1}_i (B_i) \in \setF
+      \end{align*}
+
+      $\Rightarrow X^{-1} (B) \in \setF$ для $\forall B \in \setM$. По лемме получаем, 
+      что $X$ -- случайный вектор.
+  \end{enumerate}
+
+\end{proof}
+
+\bigtitle{Смысл условия измеримости}
+
+Случайные величины и векторы --- это численные и векторные характеристики случайных экспериментов. Нам нужно уметь вычилсять вероятности вида $P(\xi \leq x)$ или $P(\xi \in [a, b])$
+
+Но $P$ задана формально только на $\sigma$-алгебре $\setF$\\
+Значит, нам нужно требовать, чтобы события вида $\{ \xi \leq x \}$ и 
+$\{\xi \in [a, b]\}$ лежали в $\setF$.
+
+\mysection{Действия над случайными величинами и векторами}
+
+\begin{definition}
+  Функция $\phi\colon \setRn \to \setR^m$ называется борелевской, 
+  если для $\forall B \in B(\setR^m)$
+  \begin{align*}
+    \phi^{-1} (B) = \condset{x}{\phi(x) \in B} \in B(\setRn)
+  \end{align*}
+\end{definition}
+
+\begin{lemma}
+  Пусть $\xi = (\xi_1, \ldots, \xi_n)$ -- случайный вектор.
+  $\phi\colon \setRn \to \setR^m$ -- борелевская функция.\\
+  Тогда $\phi(\xi)$ -- тоже случайный вектор.
+\end{lemma}
+
+\begin{proof}
+  Пусть $B \in B(\setR^m)$. Тогда
+  \begin{align*}
+    &(\phi(\xi))^{-1} (B) = \condset{\omega}{\phi(\xi(\omega)) \in B}
+    =\condset{\omega}{\xi(\omega) \in \phi^{-1} (B)} \in \setF 
+    \quad\text{ (т.к $\phi^{-1}(B) \in B(\setRn)$) }
+  \end{align*}
+  $\Rightarrow \phi(\xi)$ -- случайный вектор.
+\end{proof}
+
+\begin{theorem}
+  Любая непрерывная или кусочно-непрерывная функция является борелевской.
+\end{theorem}
+
+\begin{corollary}~
+
+  Пусть $\xi$ и $\eta$ -- случайные величины, $c \in \setR$.
+
+  Тогда $c\, \xi,\; \xi + c,\; \xi + \eta,\; \xi - \eta$ и $\dfrac{\xi}{\eta}$ 
+  (считаем, что $\eta(\omega) \neq 0\; \forall \omega \in \Omega)$ -- тоже случайные величины.
+
+\end{corollary}
+
+\begin{proof}
+  $\phi(x, y) = x y$ или $x + y$ -- непрерывная функция в $\setR^2 \Rightarrow$ борелевская.\\
+  Константа $c$ -- случайная величина $\Rightarrow$ по лемме получаем, 
+  что $c\, \xi,\; \xi + c,\; \xi + \eta,\; \xi - \eta$ --- случайные величины.\\
+
+  Рассмотрим
+
+  $\phi(x, y) = \begin{cases}
+                      \dfrac{x}{y}, &y \neq 0\\
+                      0, &y = 0
+                    \end{cases}$
+
+  Она тоже борелевская(кусочно-непрерывная) $\Rightarrow \phi(\xi, \eta) = \dfrac{\xi}{\eta}$ ---
+  тоже случайная величина.
+\end{proof}
+
+\begin{lemma}[пределы случайной величины]~
+
+  Пусть $\{ \xi_n, n \in \setN \}$ -- последовательность случайных величин.
+
+  Тогда $\limup_n \xi_n,\; \limdown_n \xi_n,\; \sup\limits_n \xi_n,\; \inf\limits_n \xi_n$ -- 
+  тоже случайная величина. \\
+  (Они могут принимать значения $\pm\infty$)
+
+\end{lemma}
+
+\begin{proof}
+  \begin{align*}
+    &\condset{\omega}{\sup_n \xi_n (\omega) \leq x} = 
+    \bigcap_{n = 1}^{\infty} \{ \xi_n \leq x \} \in \setF\\
+    &\Rightarrow \sup_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\condset{\omega}{\inf_n \xi_n (\omega) \geq x} = 
+    \bigcap_{n = 1}^{\infty} \{ \xi_n \geq x \} \in \setF\\
+    &\Rightarrow \inf_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\condset{\omega}{\limup_n \xi_n (\omega) \leq x} = 
+    \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
+    \bigcap_{n = m}^{\infty} \{ \xi_n \leq x + 1/k \} \in \setF\\
+    &\Rightarrow \limup_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\condset{\omega}{\limdown_n \xi_n (\omega) \geq x} = 
+    \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
+    \bigcap_{n = m}^{\infty} \{ \xi_n \geq x + 1/k \} \in \setF\\
+    &\Rightarrow \limdown_n \xi_n (\omega) \text{ -- случайная величина }\\
+  \end{align*}
+\end{proof}
+
+\mysection{Характеристики случайных величин и векторов}
+
+Распределение случайной величины вектора.
+
+\begin{definition}
+  Пусть $(\Omega, \setF, P)$ -- ветоятностное пространство, $\xi$ - случайная величина на нем. Тогда распределением $\xi$ называется вероятностная мера $P_\xi$ на $(\setR, B(\setR))$ Заданная по правилу
+  \begin{align*}
+    P_\xi (B) = P(\xi \in B),\; B \subset B(\setR).
+  \end{align*}
+\end{definition}
+
+\begin{definition}
+  Пусть $\xi$ - случайный вектор размерности $n$ на $(\Omega, \setF, P)$. 
+  Тогда его распределением $P_\xi$ называется вероятностая мера $\setRn, B(\setR^m)$, заданная по правилу
+    \begin{align*}
+      P_\xi (B) = P(\xi \in B),\; B \in B(\setR)
+    \end{align*}
+\end{definition}
+
+\bigtitle{Функция распределения}
+
+\begin{definition}
+  Пусть $(\Omega, \setF, P)$ -- вероятностное пространство.
+  $\xi$ - случайная велличина на нем. Тогда \emph{функцией распределения} случайной величины $\xi$ называется
+    \begin{align*}
+      F_\xi (x) = P(\xi \leq x)
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+  Случайная величина $\xi$ называется
+  \begin{itemize}
+    \item 
+      дискретной, если её функция распределения дискретная.
+
+    \item 
+      абсолютно непрерывной, если её функция распределения абсолютно непрерывна. 
+      В этом случае
+      \begin{align*}
+        P(\xi \leq x) = F_\xi (x) = \int_{-\infty}^{+\infty}{x} P_\xi (t)\, dt
+      \end{align*}
+      и функция $p_\xi (t)$ называется плотностью случайной величины $\xi$.\\
+
+    \item
+      сингулярной, если её функция распределения сингулярна
+
+    \item
+      непрерывной, если её функция рапределение непрерывна.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Пусть $\xi = (\xi_1, \ldots, \xi_n)$ -- случайный вектор на $(\Omega, \setF, P)$. 
+  Тогда его \emph{функцией распределения} называется 
+  \begin{align*}
+    F_\xi (x_1, \ldots, x_n) = P(\xi_1 \leq x_1, \ldots, \xi_n \leq x_n).
+  \end{align*}
+\end{definition}
+
+\bigtitle{Порожденная $\sigma$-алгебра}
+
+\begin{definition}
+  Пусть $\xi$ - случайная величина на $(\Omega, \setF, P)$. 
+  Тогда \emph{$\sigma$-алгеброй $\setF_\xi$, порожденной $\xi$} называется
+  \begin{align*}
+    F_\xi = \condset{\{ \xi \in B \}}{B \in B(\setRn)}
+  \end{align*}
+\end{definition}
+
+\begin{definition}
+  Если $\xi$ -- случайный вектор размерности $n$ на $(\Omega, \setF, P)$, 
+  то $\sigma$-алгеброй, порожденной $\xi$ называется
+  \begin{align*}
+    F_\xi = \condset{\{ \xi \in B \}}{B \in B(\setRn)}
+  \end{align*}
+\end{definition}
+
+Схема:
+\begin{align*}
+  (\Omega, \setF, P) &\toup{\xi} (\setR, B(\setR))\\
+  P                  &\toup{\phantom{\xi}} P_\xi\\
+  F_\xi              &\xleftarrow{\phantom{\xi}} B(\setR)
+\end{align*}
+
+\begin{definition}
+  Пусть $\xi$ и $\eta$ -- случайные величины. 
+  Будем говорить, что $\eta$ является \emph{$\setF_\xi$ - измеримой}, 
+  если $\setF_\eta \subset \setF_\xi$.
+\end{definition}
+
+\begin{exercise}
+  Пусть $\phi(x)$ -- борелевская функция, $\eta = \phi(\xi)$. Тогда $\eta$ -- $\setF_\xi$ - измерима.
+\end{exercise}
+
+\begin{theorem}
+  Пусть $\eta$ - $F_\xi$ - измерима. 
+  Тогда $\exists$ борелевская функция $\phi(x)$ т.ч\; $\eta = \phi(\xi)$
+\end{theorem}
+
+\begin{definition}~
+
+  Пусть $A \in \setF$ -- событие на $(\Omega, \setF, P)$\\
+  Тогда случайная величина\\
+  \begin{align*}
+    I_A = \begin{cases}
+              1, & \omega \in A\\
+              0, & \omega \not\in A
+          \end{cases}
+  \end{align*}
+
+  называется индикатором события $A$
+\end{definition}
+
+\begin{definition}
+  Случайная величина $\xi$ называется \emph{простой}, если она принимает конечное число значений. 
+
+  Тогда $\exists$ набор $\{x_1, \ldots, x_n\}$ из различных чисел т.ч
+  \begin{align*}
+    \xi = \sum_{k = 1}^{n} x_k I_{A_k}
+  \end{align*}
+  где события $A_1 \ldots A_n$ -- разбиение $\Omega$. т.е $A_k = \{ \xi = x_k \}$
+\end{definition}
+
