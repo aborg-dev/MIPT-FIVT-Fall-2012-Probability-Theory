@@ -7,12 +7,21 @@
 
 		($\Rightarrow$) очевидно.
 
-		($\Leftarrow$) Для $\forall A \in \setF$
+		($\Leftarrow$) Для $\forall A, B \in \setF$
 
 		$\comp{A} = \Omega \setminus A \in \setF$ т.к. $\setF - \lambda$-система ($A \subset \Omega$ и $\Omega \in \setF$, свойство 2)
 		
+		
 		Также имеется замкнутость относительно $\cap$ в $\setF$ 
-		($\setF - \pi$-система) $\Rightarrow \setF$ является алгеброй
+		($\setF - \pi$-система) 
+
+		$A \setminus B = A \setminus (A \cap B) \in \setF$
+		
+		$A \cup B = \comp {(\Omega \setminus A) \setminus (B \setminus A)} \in \setF$
+
+		$A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$
+		
+		$\Rightarrow \setF$ является алгеброй
 
 		Покажем, что она $\sigma$-алгебра:\\
 		Пусть $\braces{ B_n, n \in \setN }$ - последовательность элементов из $\setF$, 
@@ -128,7 +137,7 @@
 
 			Пусть $C \in \setM$. Тогда $(B \setminus A) \cap C = (B \cap C) \setminus (A \cap C)$
 
-			Причем $(A \setminus C) \subset (B \setminus C) \Rightarrow$ по свойству 2) $\lambda$-системы\\
+			Причем $(A \cap C) \subset (B \cap C) \Rightarrow$ по свойству 2) $\lambda$-системы\\
 			получаем, что $(B \setminus A) \cap C \in \lambda(M) \Rightarrow (B \setminus A) \in \setM_1$
 			
 		\item 
@@ -139,6 +148,7 @@
 			Но $(B_n \cap A) \in \lambda(\setM) \Rightarrow (B \cap A) \in \lambda(\setM)$ 
 			по свойству 3) $\lambda$-системы. $\Rightarrow B \in \setM_1$.
 
+	\end{enumerate}
 			Мы показали, что $\setM_1$ -- $\lambda$-система.
 
 			В силу того, что $\setM$ -- $\pi$-система, $\setM \subset \setM_1 
@@ -162,7 +172,6 @@
 			\begin{align*}
 				\forall A, B \in \lambda(\setM) \hookrightarrow A \cap B \in \lambda(\setM)
 			\end{align*}
-	\end{enumerate}
 \end{proof}
 
 \mysection{Независимость событий}

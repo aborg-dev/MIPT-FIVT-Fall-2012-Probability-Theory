@@ -181,7 +181,7 @@
 \end{statement}
 
 \begin{definition}
-	Будем обозначать $A_n \downarrow A при n \to +\infty $, 
+	Будем обозначать $A_n \downarrow A$ при $n \to +\infty $, 
 	если для последовательности событий $\braces{A_n, n \in \setN}$ выполнены свойства: 
 
 	\begin{enumerate}
@@ -202,7 +202,7 @@
 
 \begin{proof}~
 
-	$(\Leftarrow)$ Пусть $P$ - вероятностная мера, а $A_n \downarrow \emptyset.$
+	$(\Rightarrow)$ Пусть $P$ - вероятностная мера, а $A_n \downarrow \emptyset.$
 
 	Рассмотрим $B_m = A_m \setminus A_{m+1}.$ Тогда в силу $\bigcap\limits_n A_n = \emptyset
 	\Rightarrow \bigsqcup\limits_{m = n}^{\infty} B_m = A_n$
@@ -213,7 +213,7 @@
 	$\Rightarrow \sum\limits_{m=n}^{\infty} P(B_m)$ есть остаток сходящего ряда 
 	$\Rightarrow P(A_n) \rightarrow 0$\\
 
-	$(\Rightarrow)$ Пусть $P$ непрерывна в нуле. 
+	$(\Leftarrow)$ Пусть $P$ непрерывна в нуле. 
 
 	Покажем её счетную аддитивность:
 
@@ -239,7 +239,7 @@
 
 \begin{corollary}[непрерывность вероятностной меры]~
 	\begin{enumerate}
-		\item Если $A_n \downarrow A, \text{ то } P(A_1) \to P(A)$
+		\item Если $A_n \downarrow A, \text{ то } P(A_n) \to P(A)$
 		\item Если $A_n \uparrow A$ (т.е $A_n \subset A_{n - 1} \subset \ldots $,
 		и $A = \bigcup\limits_n A_n$, то $P(A_n) \to P(A)$	
 	\end{enumerate}
