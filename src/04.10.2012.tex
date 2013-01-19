@@ -10,7 +10,7 @@
 \end{theorem}
 
 \begin{lemma}
-	Пусть $(\Omega, \setF)$ -- измеримое простанство, $\setM$ -- $\pi$-система в 
+	Пусть $(\Omega, \setF)$ -- измеримое пространство, $\setM$ -- $\pi$-система в 
 	$\setF$, а $P$ и $Q$ -- две вероятностные меры на $(\Omega, \setF)$. 
 	Тогда если $P |_{\setM} = Q |_{\setM}$, то 
 	\begin{equation*}
@@ -41,13 +41,13 @@
 				&= \expl{непрерывность вероятностной меры} = Q(A)\\
 				&\Rightarrow A \in \setL
 			\end{align*}
+	\end{enumerate}
 			Доказали, что $\setL$ -- $\lambda$-система. По условию $\setM \subset \setL 
-			\Rightarrow$ по теореме о монотонных классах получаем, 
+			\Rightarrow$ $\lambda (\setM) \subset \setL$. По теореме о монотонных классах получаем, 
 			что $\sigma(\setM) \subset \setL$, т.е. 
 			\begin{equation*}
-				P |_{\sigma(\setM)} = P |_{\sigma(\setM)}
+				P |_{\sigma(\setM)} = Q |_{\sigma(\setM)}
 			\end{equation*}				
-	\end{enumerate}
 \end{proof}
 
 \begin{corollary}[единственность в теореме Каратеодори]~
