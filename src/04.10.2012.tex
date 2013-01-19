@@ -120,6 +120,12 @@
 
 \begin{corollary}
 	Функция имеет предел слева в каждой точке $x \in \setR$, при этом точек разрыва у нее не более чем счетное множество.
+
+	\begin{proof}
+		Каждая точка разрыва является скачком. Каждому скачку сопоставим отрезок.
+		Отрезки скачков не пересекаются, так как функция монотонная. 
+		В каждом из них найдется рациональная точка $\Rightarrow$ точек разрыва не более чем счетно.
+	\end{proof}
 \end{corollary}
 
 \begin{definition}
@@ -150,12 +156,12 @@
 
 Легко видеть, что $P_0$ обладает свойствами 
 \begin{enumerate}
-	\item $P_0(A) \in [0, 1] \forall A \in \setA$
+	\item $P_0(A) \in [0, 1]\quad \forall A \in \setA$
 	\item $P_0(\setR) = F(+\infty) - F(-\infty) = 1$
 	\item 
 		$P_0$ -- конечно-аддитивна, т.е. 
 		$\forall A, B \in \setA\\
-		 A \cap B = \emptyset \hookrightarrow P_0 (A \cup B) = P(A) + P(B)$
+		 A \cap B = \emptyset \hookrightarrow P_0 (A \cup B) = P_0(A) + P_0(B)$
 \end{enumerate}
 
 Если бы удалось доказать, что $P_0$  счетно-аддитивна на $\setA$, 
@@ -177,8 +183,9 @@
 
 		Пусть $\mathcal{X} \subset \setR$ -- не более чем счетное множество.
 		\begin{definition}
-			Вероятностная мера $P$ на $(\setR, B(\setR))$, удовлетворяющая свойству 
-			$P(\setR | \mathcal{X})~=~0$, называется дискретной вероятностой мерой на $\mathcal{X}$. 
+			Вероятностная мера $P$ на $(\setR, B(\setR))$, 
+			удовлетворяющая свойству $P(\setR~\setminus~\mathcal{X})~=~0$, 
+			называется дискретной вероятностой мерой на $\mathcal{X}$. 
 			Её функция функция распределения называется дискретной.\\
 			Пусть $\mathcal{X} = \braces{x_k}$ и положим $p_k = P(\braces{x_k})$\\
 			Тогда $P(\mathcal{X}) = 1 = \sum\limits_{k} P(\braces{x_k}) = \sum\limits_k p_k$

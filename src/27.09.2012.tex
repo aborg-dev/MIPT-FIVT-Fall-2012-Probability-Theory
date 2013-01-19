@@ -128,11 +128,11 @@
 
 			Пусть $C \in \setM$. Тогда $(B \setminus A) \cap C = (B \cap C) \setminus (A \cap C)$
 
-			Причем $A \setminus C \subset B \setminus C \Rightarrow$ по свойству 2) $\lambda$-системы\\
-			получаем, что $(B \setminus A) \cap C \in \lambda(M) \Rightarrow B \setminus A \in \setM_1$
+			Причем $(A \setminus C) \subset (B \setminus C) \Rightarrow$ по свойству 2) $\lambda$-системы\\
+			получаем, что $(B \setminus A) \cap C \in \lambda(M) \Rightarrow (B \setminus A) \in \setM_1$
 			
 		\item 
-			Пусть $\braces{B_n, n \in \setN}$ -- последовательность из $\setM_1$, 
+			Пусть $\braces{B_n,\; n \in \setN}$ -- последовательность из $\setM_1$, 
 			причем $B_n \uparrow B$. Верно ли, что $B \in \setM_1 ?$
 
 			Для $\forall A \in \setM \quad (B_n \cap A) \uparrow (B \cap A)$. 
@@ -145,18 +145,23 @@
 			\Rightarrow \lambda(\setM) \subset \setM_1.$ 
 			В силу минимальности. Но $\setM_1 \subset \lambda(\setM)$ по построению. \\
 			Следовательно, $\lambda(\setM) = \setM_1$, т.е. 
-			$\forall A \in \lambda(\setM) \quad \forall B \in \setM \quad A \cap B \in \lambda(\setM)$\\
+			$\forall A \in \lambda(\setM) \quad \forall B \in \setM \quad A \cap B \in \lambda(\setM)$
 			
 			Рассмотрим систему
 			\begin{equation*}
 				\setM_2 = \condset{B \in \lambda(\setM)}
-					{\forall A \in \lambda(\setM) \; A \cap B \in \lambda(\setM))}
+					{\forall A \in \lambda(\setM) \hookrightarrow A \cap B \in \lambda(\setM)}
 			\end{equation*}
 
 			Точно также проверяется, что $\setM_2$ -- это $\lambda$-система.
-			Тогда $\sigma(\setM) \subset \setL$.\\
-			В силу минимальности $\lambda(\setM) \subset \setL$. 
-			По теореме $\sigma(\setM) = \lambda(\setM) \subset \setL$
+
+			А ранее мы доказали, что $\setM \subset \setM_2$	
+			Значит $\lambda(\setM) \subset \setM_2 \Rightarrow \lambda(\setM) = \setM_2$
+			
+			Значит $\lambda(\setM)$ -- $\pi$-система. То есть 
+			\begin{align*}
+				\forall A, B \in \lambda(\setM) \hookrightarrow A \cap B \in \lambda(\setM)
+			\end{align*}
 	\end{enumerate}
 \end{proof}
 
