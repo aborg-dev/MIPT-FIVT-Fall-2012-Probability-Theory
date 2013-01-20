@@ -162,7 +162,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
 \end{corollary}
 
 \begin{proof}
-  $\phi(x, y) = x y$ или $x + y$ -- непрерывная функция в $\setR^2 \Rightarrow$ борелевская.\\
+  $\phi(x, y) = x y$ или $x + y$ -- непрерывные функции в $\setR^2 \Rightarrow$ борелевские.\\
   Константа $c$ -- случайная величина $\Rightarrow$ по лемме получаем, 
   что $c\, \xi,\; \xi + c,\; \xi + \eta,\; \xi - \eta$ --- случайные величины.\\
 
@@ -197,11 +197,11 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
     &\Rightarrow \inf_n \xi_n (\omega) \text{ -- случайная величина }\\
     &\condset{\omega}{\limup_n \xi_n (\omega) \leq x} = 
     \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
-    \bigcap_{n = m}^{\infty} \{ \xi_n \leq x + 1/k \} \in \setF\\
+    \bigcap_{n = m}^{\infty} \{ \xi_n \leq x + \frac{1}{k} \} \in \setF\\
     &\Rightarrow \limup_n \xi_n (\omega) \text{ -- случайная величина }\\
     &\condset{\omega}{\limdown_n \xi_n (\omega) \geq x} = 
     \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
-    \bigcap_{n = m}^{\infty} \{ \xi_n \geq x + 1/k \} \in \setF\\
+    \bigcap_{n = m}^{\infty} \{ \xi_n \geq x - \frac{1}{k} \} \in \setF\\
     &\Rightarrow \limdown_n \xi_n (\omega) \text{ -- случайная величина }\\
   \end{align*}
 \end{proof}
@@ -211,7 +211,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
 Распределение случайной величины вектора.
 
 \begin{definition}
-  Пусть $(\Omega, \setF, P)$ -- ветоятностное пространство, $\xi$ - случайная величина на нем. Тогда распределением $\xi$ называется вероятностная мера $P_\xi$ на $(\setR, B(\setR))$ Заданная по правилу
+  Пусть $(\Omega, \setF, P)$ -- вероятностное пространство, $\xi$ - случайная величина на нем. Тогда распределением $\xi$ называется вероятностная мера $P_\xi$ на $(\setR, B(\setR))$, заданная по правилу.
   \begin{align*}
     P_\xi (B) = P(\xi \in B),\; B \subset B(\setR).
   \end{align*}
@@ -219,9 +219,9 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
 
 \begin{definition}
   Пусть $\xi$ - случайный вектор размерности $n$ на $(\Omega, \setF, P)$. 
-  Тогда его распределением $P_\xi$ называется вероятностая мера $\setRn, B(\setR^m)$, заданная по правилу
+  Тогда его распределением $P_\xi$ называется вероятностая мера на ($\setRn, B(\setRn)$), заданная по правилу
     \begin{align*}
-      P_\xi (B) = P(\xi \in B),\; B \in B(\setR)
+      P_\xi (B) = P(\xi \in B),\; B \in B(\setRn)
     \end{align*}
 \end{definition}
 
@@ -245,7 +245,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
       абсолютно непрерывной, если её функция распределения абсолютно непрерывна. 
       В этом случае
       \begin{align*}
-        P(\xi \leq x) = F_\xi (x) = \int_{-\infty}^{+\infty}{x} P_\xi (t)\, dt
+        P(\xi \leq x) = F_\xi (x) = \int_{-\infty}^{x} p_\xi (t)\, dt
       \end{align*}
       и функция $p_\xi (t)$ называется плотностью случайной величины $\xi$.\\
 
@@ -271,7 +271,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
   Пусть $\xi$ - случайная величина на $(\Omega, \setF, P)$. 
   Тогда \emph{$\sigma$-алгеброй $\setF_\xi$, порожденной $\xi$} называется
   \begin{align*}
-    F_\xi = \condset{\{ \xi \in B \}}{B \in B(\setRn)}
+    \setF_\xi = \condset{\{ \xi \in B \}}{B \in B(\setR)}
   \end{align*}
 \end{definition}
 
@@ -279,7 +279,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
   Если $\xi$ -- случайный вектор размерности $n$ на $(\Omega, \setF, P)$, 
   то $\sigma$-алгеброй, порожденной $\xi$ называется
   \begin{align*}
-    F_\xi = \condset{\{ \xi \in B \}}{B \in B(\setRn)}
+    \setF_\xi = \condset{\{ \xi \in B \}}{B \in B(\setRn)}
   \end{align*}
 \end{definition}
 
@@ -287,7 +287,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
 \begin{align*}
   (\Omega, \setF, P) &\toup{\xi} (\setR, B(\setR))\\
   P                  &\toup{\phantom{\xi}} P_\xi\\
-  F_\xi              &\xleftarrow{\phantom{\xi}} B(\setR)
+  \setF_\xi              &\xleftarrow{\phantom{\xi}} B(\setR)
 \end{align*}
 
 \begin{definition}
