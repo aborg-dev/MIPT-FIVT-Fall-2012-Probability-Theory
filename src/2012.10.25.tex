@@ -42,7 +42,7 @@
 	Очевидно, что $\xi_n \leq \xi$. \\
 	Ясно, что $\xi_n \uparrow \xi$, ибо целая часть в какой-то момент совпадет, а дробные части - двоично-рациональные приближения. \\
 	Покажем, что функции $\phi_n$ - борелевские, тогда $\xi_n$ - $\setF_\xi$-измеримы.
-	Найдем прообраз $B \in B(\setR)$. Это тоже самое, что прообраз двоично-рациональных точек из $B$. В каджую двоично-рациональную дробь $a$ переходит не более чем счетное кол-во полуинтервалов вида [$a + k$, $a + k + \frac{1}{2^n}$), где $k$ - какое-то целое.(Бесконечно, только если [$a$] = $n$, иначе не более 1 отрезка). Но тогда искомый прообраз - счетное объединение полкинтервалов, а значит лежит в $B(\setR)$
+	Найдем прообраз $B \in B(\setR)$. Это тоже самое, что прообраз двоично-рациональных точек из $B$. В каждую двоично-рациональную дробь $a$ переходит не более чем счетное кол-во полуинтервалов вида [$a + k$, $a + k + \frac{1}{2^n}$), где $k$ - какое-то целое.(Бесконечно, только если [$a$] = $n$, иначе не более 1 полуинтервала). Но тогда искомый прообраз - счетное объединение полуинтервалов, а значит лежит в $B(\setR)$
 
     \item 
       Пусть $\xi = \xi^+ - \xi^-$ и пусть $\{\eta_n,\; n \in \setN \}$ -- последовательность
@@ -146,16 +146,16 @@
 
   Тогда
   \begin{align*}
-    &E\xi_n = E(\xi_n I_{A_n} + E(\xi_n I_{\comp{A}_n} \geq E((\eta - \epsilon) I_{A_n}) = \\
+    &E\xi_n = E(\xi_n I_{A_n}) + E(\xi_n I_{\comp{A}_n}) \geq E((\eta - \epsilon) I_{A_n}) = \\
     &E \eta - E\eta I_{\comp{A}_n} - \epsilon E I_{A_n} \geq 
     E\eta - c\, P(\comp{A}_n) - \epsilon P(A_n);\\
   \end{align*}
-  где $c = \max\limits_{\omega \in \Omega} \eta(\omega)$
-  Заметим, что $A_n = \{ \xi_n \geq \eta - \epsilon \} \uparrow \Omega$\\
-  т.к. $\xi_n \uparrow \xi \geq \eta \Rightarrow P(A_n) \rightarrow 1$\\
+  где $c = \max\limits_{\omega \in \Omega} \eta(\omega)$. \\
+  Заметим, что $A_n = \{ \xi_n \geq \eta - \epsilon \} \uparrow \Omega$ 
+  т.к. $\xi_n \uparrow \xi \geq \eta \Rightarrow P(A_n) \rightarrow P(\Omega) = 1$\\
   Значит
   \begin{align*}
-    \lim_{n \to \infty} E\xi_n \geq E\eta_n \geq E\eta - \epsilon
+    \lim_{n \to \infty} E\xi_n \geq \lim_{n \to \infty} (E\eta - c\, P(\comp{A}_n) - \epsilon P(A_n)) = E\eta - \epsilon
   \end{align*}
   В силу произвольности $\epsilon$: $\lim\limits_{n \to \infty} E \xi_n \geq E \eta$
 \end{proof}
@@ -264,7 +264,7 @@
     \end{proof}
 
   \item
-    Если $\xi \leq \eta$ и $E \eta, E\xi$ - конечны, то 
+    Если $\eta \leq \xi$ и $E \eta, E\xi$ - конечны, то 
     \begin{align*}
       E \eta \leq E \xi
     \end{align*}
@@ -324,15 +324,13 @@
 
       Обозначим $\delta = (\xi^+ + \eta^+) - (\xi + \eta)^+ \geq 0$.
 
-      Тогда $(\xi^- + \eta^-) - (\xi + \eta)^- = \delta$
+	  По доказанному, $E\delta = E\xi^+ + E\eta^+ - E(\xi + \eta)^+$
 
-      Для неотрицательных случайных величин аддитивность доказали $\Rightarrow$
-      \begin{align*}
-        &E (\xi + \eta)^+ + E \delta = E \xi^+ + E \eta^+ + E \xi^- + E \eta^- =
-        E \delta + E (\xi + \eta)^-\\
-        &\Rightarrow E (\xi + \eta) = E (\xi + \eta)^+ - E (\xi + \eta)^- = 
-        E \xi^+ + E \eta^+ -E \delta - E \xi^- - E \eta^- + E \delta = E \xi + E \eta
-      \end{align*} 
+	  Рассмотрим $(\xi + \eta)^- = (\xi + \eta)^+ - (\xi + \eta) = \xi^+ + \eta^+ - \delta - (\xi + \eta) = \xi^- + \eta^- - \delta$.
+
+	  Следовательно $E(\xi + \eta)^- = E\xi^- + E\eta- - E\delta$
+
+	  Тогда $E(\xi + \eta) = E(\xi + \eta)^+ - E(\xi + \eta)^- = E\xi^+ + E\eta^+ - E\delta- E\xi^- + E\eta^- + E\delta = E\xi + E\eta$
 
     \end{proof}
 
