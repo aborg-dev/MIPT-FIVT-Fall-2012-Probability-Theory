@@ -155,7 +155,7 @@
 			\Rightarrow \lambda(\setM) \subset \setM_1.$ 
 			В силу минимальности. Но $\setM_1 \subset \lambda(\setM)$ по построению. \\
 			Следовательно, $\lambda(\setM) = \setM_1$, т.е. 
-			$\forall A \in \lambda(\setM) \quad \forall B \in \setM \quad A \cap B \in \lambda(\setM)$
+			$\forall A \in \lambda(\setM) \quad \forall B \in \setM \quad A \cap B \in \lambda(\setM) (*)$
 			
 			Рассмотрим систему
 			\begin{equation*}
@@ -165,7 +165,7 @@
 
 			Точно также проверяется, что $\setM_2$ -- это $\lambda$-система.
 
-			А ранее мы доказали, что $\setM \subset \setM_2$	
+			$\setM \subset \setM_2$ т.к $\forall X \in \setM: X \in \setM_2$  (см. $(*)$).
 			Значит $\lambda(\setM) \subset \setM_2 \Rightarrow \lambda(\setM) = \setM_2$
 			
 			Значит $\lambda(\setM)$ -- $\pi$-система. То есть 
@@ -253,12 +253,13 @@
 			Да:\\
 			Пусть $A \in \setM_1$. Тогда $(B_n \cap A) \uparrow (B \cap A)$.
 			\begin{align*}
-				&P(B \cap A) = \expl{по теореме о непрерывности меры} = \lim_n P(B_n \cap A) =\\
-				&= \expl{$B_n \in \setL_1 \Rightarrow B$ независимо с $A$} = \lim_n P(B_n) P(A) =
+				&P(B \cap A) = \expl{по теореме о непрерывности меры} = \lim_{n \to \infty} P(B_n \cap A) =\\
+				&= \expl{$B_n \in \setL_1 \Rightarrow B$ независимо с $A$} = \lim_{n \to \infty} P(B_n) P(A) =
 				\expl{по теореме о непрерывности} = P(B) P(A)\\
-				&\Rightarrow B \text{ и } A \text{ непрерывны } \Rightarrow B \in \setL_1
+				&\Rightarrow B \text{ и } A \text{ независимы } \Rightarrow B \in \setL_1
 			\end{align*}
 
+	\end{enumerate}
 			Значит $\setL_1$ -- $\lambda$-система. По условию мы знаем, что $\setM_2$ независима
 			с $\setM_1 \Rightarrow \setM_2 \subset \setL_1 \Rightarrow$ по следствию из теоремы 
 			о монотонности $\Rightarrow \sigma(\setM_2) \subset \setL_1
@@ -275,7 +276,6 @@
 			получаем, что $\sigma(\setM_1) \subset \setL_2 
 			\Rightarrow \sigma(\setM_1)$ независимо с $\sigma(\setM_2)$.
 		
-	\end{enumerate}
 \end{proof}
 
 \begin{corollary}

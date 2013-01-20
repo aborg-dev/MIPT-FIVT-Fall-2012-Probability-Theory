@@ -166,7 +166,7 @@
 				B = (A \cap B) \sqcup (B \setminus (A \cap B)) \\
 					\Rightarrow P(B) = P(A \cap B)  + P(B \setminus (A \cap B))$
 
-				Осталось отнять вычесть одно равенство из другого.
+				Осталось вычесть одно равенство из другого.
 
 			\item 
 				Если $m = 2$ --- то это пункт 4). \\
@@ -233,14 +233,14 @@
 	Далее $\displaystyle P\pars{\bigsqcup_{n=1}^{\infty} A_n} = 
 	P\pars{\bigsqcup_{n=1}^{m} A_m \sqcup B_{m+1}} 
 	= \expl{конечная аддитивность} = \\
-	= \sum_{n=1}^{m} P(A_n) + P(B_{m + 1}) \to \sum_{n = 1}^{\infty} P(A_n), m \to \infty\\
+	= \sum_{n=1}^{m} P(A_n) + P(B_{m + 1}) \to \sum_{n = 1}^{\infty} P(A_n),\; m \to \infty\\
 	\Rightarrow P\pars{\bigsqcup_n A_n} = \sum_n P(A_n)$
 \end{proof}
 
 \begin{corollary}[непрерывность вероятностной меры]~
 	\begin{enumerate}
 		\item Если $A_n \downarrow A, \text{ то } P(A_n) \to P(A)$
-		\item Если $A_n \uparrow A$ (т.е $A_n \subset A_{n - 1} \subset \ldots $,
+		\item Если $A_n \uparrow A$ (т.е $A_n \subset A_{n + 1} \subset \ldots $,
 		и $A = \bigcup\limits_n A_n$, то $P(A_n) \to P(A)$	
 	\end{enumerate}
 \end{corollary}
