@@ -72,7 +72,7 @@
 \begin{theorem}[Колмоговора, о мерах в $\setRinf$]~
 
 	Пусть $\forall n$ задана вероятностная мера $P_n$  в $(\setRn, B(\setRn))$, 
-	причем для $\{ P_n, n \in \setN \}$ выполнено свойтсво согласованности.\\
+	причем для $\{ P_n, n \in \setN \}$ выполнено свойство согласованности.\\
 	Тогда $\exists !$ вероятностная мера $P$ в $(\setRinf, B(\setRinf))$,
 	т.ч. $\forall n \, \forall B_n \in B(\setRn)$:
 	\begin{align*}
@@ -212,7 +212,7 @@
 				E(a \xi + b \eta) = a E \xi + b E \eta, \quad a, b \in \setR
 			\end{align*}
 			
-		\item Пусть $\eta$ принимает значения $(a_1, a_2, \ldots)$. Тогда
+		\item Пусть $\xi$ принимает значения $(a_1, a_2, \ldots)$. Тогда
 			\begin{align*}
 				E \xi = \sum_i a_i P(\xi = a_i)
 			\end{align*}
@@ -268,18 +268,18 @@
 \begin{definition}
 	$E \xi^k$ -- \emph{момент порядка $k$} случайной величины $\xi$ ($k$-й момент)\\
 	
-	$E(\xi - E\xi)^k$ -- \emph{центральный момент порядка $k$} случайной величины $\eta$ 
+	$E(\xi - E\xi)^k$ -- \emph{центральный момент порядка $k$} случайной величины $\xi$ 
 	($k$-й центральный момент).\\
 	
 	$E\xi(\xi - 1) \ldots (\xi - k + 1)$ -- \emph{факториальный момент порядка $k$}
-	 случайной величины $\eta$, $k \in \setN$\\
+	 случайной величины $\xi$, $k \in \setN$\\
 	
 	$D\xi = E(\xi - E\xi)^2$ -- \emph{дисперсия} случайной величины $\xi$
 \end{definition}
 
 \begin{lemma}[свойства дисперсии]~
 	\begin{enumerate}
-		\item $D\xi = E\xi^2 - (E\xi)^2$
+		\item $D\xi = E(\xi - E\xi)^2 = $|линейность|$ = E(\xi^2) - 2E(\xi E\xi) + E(E(\xi)^2) = E\xi^2 - 2(E\xi)^2 + (E\xi)^2  =E\xi^2 - (E\xi)^2$
 		\item $D\xi \geq 0$
 		\item $D(c\, \xi) = c^2 D\xi$
 		\item $D\xi = 0 \Leftrightarrow P(\xi = E\xi) = 1$
