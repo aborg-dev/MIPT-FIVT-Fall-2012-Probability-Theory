@@ -80,7 +80,7 @@
 \bigtitle{Свойства математического ожидания для простых случайных величин}
 
 \begin{enumerate}
-  \item $\xi = c = const \Rightarrow E\xi = c$
+  \item $\xi = c = const \implies E\xi = c$
   \item 
     Линейность
     \begin{align*}
@@ -106,7 +106,7 @@
 
   \item Если $\xi \geq 0$, то $E \xi \geq 0$
     \begin{proof}
-      Если $\xi \geq 0$, то все $x_k \geq 0 \Rightarrow E \xi \geq 0$
+      Если $\xi \geq 0$, то все $x_k \geq 0 \implies E \xi \geq 0$
     \end{proof}
 
   \item Если $\xi \leq \eta$, то $E \xi \leq E \eta$
@@ -126,7 +126,7 @@
   а $\{ \xi_n,\, n \in \setN \}$ -- $\forall$ последовательность неотрицательных 
   простых случайных величин, т.ч. $\xi_n \uparrow \xi$. 
 
-  Тогда $E \xi_n \leq E \xi_{n + 1} \Rightarrow \exists$ предел $E \xi_n$ и
+  Тогда $E \xi_n \leq E \xi_{n + 1} \implies \exists$ предел $E \xi_n$ и
   \begin{align*}
     E \xi := \lim_{n \to \infty} E \xi_n
   \end{align*}
@@ -152,7 +152,7 @@
   \end{align*}
   где $c = \max\limits_{\omega \in \Omega} \eta(\omega)$. \\
   Заметим, что $A_n = \{ \xi_n \geq \eta - \epsilon \} \uparrow \Omega$ 
-  т.к. $\xi_n \uparrow \xi \geq \eta \Rightarrow P(A_n) \rightarrow P(\Omega) = 1$\\
+  т.к. $\xi_n \uparrow \xi \geq \eta \implies P(A_n) \rightarrow P(\Omega) = 1$\\
   Значит
   \begin{align*}
     \lim_{n \to \infty} E\xi_n \geq \lim_{n \to \infty} (E\eta - c\, P(\comp{A}_n) - \epsilon P(A_n)) = E\eta - \epsilon
@@ -168,12 +168,12 @@
   Пусть $\xi \geq 0$ и $\xi_n \uparrow \xi$,\; $\eta_n \uparrow \xi$ -- последовательность простых неотрицательных случайных величин. Тогда $\forall m$ в силу леммы
   \begin{align*}
     &\lim_{n \to \infty} E \xi_n \geq E \eta_m\\
-    &\Rightarrow \lim_{n \to \infty} E \xi_n \geq \lim_{m \to \infty} E \eta_m
+    &\implies \lim_{n \to \infty} E \xi_n \geq \lim_{m \to \infty} E \eta_m
   \end{align*}
   Меняем $\xi$ и $\eta$ местами в рассуждении.
   \begin{align*}
     &\lim_{m \to \infty} E \eta_m \geq \lim_{n \to \infty} E \xi_n\\
-    &\Rightarrow \lim_{n \to \infty} E \xi_n = \lim_{m \to \infty} E \eta_m
+    &\implies \lim_{n \to \infty} E \xi_n = \lim_{m \to \infty} E \eta_m
   \end{align*}
 \end{proof}
 
@@ -215,7 +215,7 @@
       \end{align*}
 
     \item
-      $E\xi$ -- конечно $\Leftrightarrow E|\xi|$ -- конечно.
+      $E\xi$ -- конечно $\iff E|\xi|$ -- конечно.
 
     \item
       Множество случ. величин $\xi$ на $(\Omega, \setF, P)$ с условием: $E\xi$ -- конечно, образует
@@ -241,7 +241,7 @@
 
       Если $c \geq 0$, то возьмем последовательность простых неотрицательных 
       случайных величин $\xi_n$ т.ч. $\xi_n \uparrow \xi$.
-      Тогда $c\, \xi_n \uparrow c\, \xi \Rightarrow$
+      Тогда $c\, \xi_n \uparrow c\, \xi \implies$
       \begin{align*}
         &E (c\,\xi) = \lim_{n \to \infty} E(c\,\xi_n) = 
         c \lim_{n \to \infty} E \xi_n = c E \xi\\
@@ -249,7 +249,7 @@
 
       Если $c < 0$, то $c\,\xi = - (c\,\xi)^- = -(-c\,\xi)$
 
-      $\Rightarrow E(c\,\xi) = - E(c\,\xi)^- = - E((-c)\,\xi) = c E \xi$\\
+      $\implies E(c\,\xi) = - E(c\,\xi)^- = - E((-c)\,\xi) = c E \xi$\\
 
       Пусть $\xi$ - произвольная, $c \geq 0$
 
@@ -281,7 +281,7 @@
 
       Тогда $\xi^+(\omega) \geq \eta^+(\omega)$ и $\xi^-(\omega) \leq \eta^-(\omega)$
 
-      $\Rightarrow E \eta = E \eta^+ - E \eta^- \leq E \xi^+ - E \xi^- = E \xi$
+      $\implies E \eta = E \eta^+ - E \eta^- \leq E \xi^+ - E \xi^- = E \xi$
     \end{proof}
 
   \item 
@@ -291,12 +291,12 @@
     \end{align*}
 
     \begin{proof}
-      $|\xi| = \xi^+ + \xi^- \Rightarrow E|\xi|$ -- конечно.
+      $|\xi| = \xi^+ + \xi^- \implies E|\xi|$ -- конечно.
 
       По свойству 2
       \begin{align*}
         &E(-|\xi|) \leq E \xi \leq E |\xi|
-        \Rightarrow -E|\xi| \leq E\xi \leq E|\xi| \Rightarrow |E\xi| \leq E|\xi|
+        \implies -E|\xi| \leq E\xi \leq E|\xi| \implies |E\xi| \leq E|\xi|
       \end{align*}
     \end{proof}
 

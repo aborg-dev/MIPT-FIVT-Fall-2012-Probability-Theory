@@ -166,7 +166,7 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
 
 \begin{lemma}[критерий сходимости почти наверное]~
 
-  $\xi_n \toae \xi \quad \Leftrightarrow$ \quad для $\forall \epsilon > 0:$
+  $\xi_n \toae \xi \quad \iff$ \quad для $\forall \epsilon > 0:$
   $P(\sup\limits_{k \geq n} |\xi_k - \xi| \geq \epsilon) \todown{n \to \infty} 0$
 
 \end{lemma}
@@ -181,13 +181,13 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
 
   Получаем
   \begin{align*}
-    &P(\xi_n \nrightarrow \xi) = 0 \Leftrightarrow 
-    P\pars{\bigcup_{m = 1}^{\infty} A^{\frac{1}{m}}} = 0 \Leftrightarrow 
-    \forall m : P\pars{A^{\frac{1}{m}}} = 0 \Leftrightarrow 
+    &P(\xi_n \nrightarrow \xi) = 0 \iff 
+    P\pars{\bigcup_{m = 1}^{\infty} A^{\frac{1}{m}}} = 0 \iff 
+    \forall m : P\pars{A^{\frac{1}{m}}} = 0 \iff 
     \forall \epsilon > 0 : P(A^\epsilon) = 0.\\
     &\text{Но $\bigcup\limits_{k \geq n} A_k^\epsilon \downarrow A^\epsilon$, поэтому }
     P(A^\epsilon) = \lim_{n \to \infty} P\pars{\bigcup_{k \geq n} A_k^\epsilon} = 0
-    \Leftrightarrow P\pars{\bigcup_{k \geq n} A_k^\epsilon} \todown{n \to \infty} 0
+    \iff P\pars{\bigcup_{k \geq n} A_k^\epsilon} \todown{n \to \infty} 0
   \end{align*}
   
   Осталось заметить, что $\bigcup\limits_{k \geq n}{A_k^\epsilon} = 
@@ -198,9 +198,9 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
 
   Выполнены соотношение
   \begin{enumerate}
-    \item $\xi_n \toae \xi \Rightarrow \xi_n \toup{P} \xi$
-    \item $\xi_n \toup{L^P} \xi \Rightarrow \xi_n \toup{P} \xi$
-    \item $\xi_n \toup{P} \xi \Rightarrow \xi_n \toup{d} \xi$
+    \item $\xi_n \toae \xi \implies \xi_n \toup{P} \xi$
+    \item $\xi_n \toup{L^P} \xi \implies \xi_n \toup{P} \xi$
+    \item $\xi_n \toup{P} \xi \implies \xi_n \toup{d} \xi$
   \end{enumerate}
 \end{theorem}
 
@@ -213,7 +213,7 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
         &P(\sup_{k \geq n} |\xi_k - \xi| \geq \epsilon) \todown{n \to \infty} 0,
         \quad\text{ но событие } \{ |\xi_n - \xi| \geq \epsilon \} \subset 
         \{ \sup_{k \geq n} |\xi_k - \xi| \geq \epsilon \}\\
-        &\Rightarrow P(|\xi_n - \xi| \geq \epsilon) \leq 
+        &\implies P(|\xi_n - \xi| \geq \epsilon) \leq 
         P(\sup_{k \geq n} |\xi_k - \xi| \geq \epsilon) \todown{n \to \infty} 0
       \end{align*}
 
@@ -249,13 +249,13 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
       \end{align*}
 
       Если выполнено $A_1$, то $|f(\xi_n) - f(\xi)| \leq \frac{\epsilon}{2}$
-      $\Rightarrow E|f(\xi_n) - f(\xi)| I_{A_1} \leq 
+      $\implies E|f(\xi_n) - f(\xi)| I_{A_1} \leq 
       \frac{\epsilon}{2} E I_{A_1} \leq \frac{\epsilon}{2}$
 
       Если выполнено $A_2$ или $A_3$, то $|f(\xi_n) - f(\xi)| \leq 2 C$
 
       \begin{align*}
-        \Rightarrow\; &\circled{$\leq$}\; \frac{\epsilon}{2} + 2 C E(I_{A_2} + I_{A_3}) =
+        \implies\; &\circled{$\leq$}\; \frac{\epsilon}{2} + 2 C E(I_{A_2} + I_{A_3}) =
         \frac{\epsilon}{2} + 2C (P(A_2) + P(A_3)) \leq\\
         &\leq \frac{\epsilon}{2} + 2C P(|\xi| > N) + 2C P(|\xi_n - \xi| > \delta) 
         \leq \epsilon + 2C P(|\xi_n - \xi| > \delta)
@@ -293,22 +293,22 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
 \end{definition}
 
 \begin{theorem}[критерий Коши]
-  Последовательность $\{ x_n,\; n \in \setN \}$ сходится $\Leftrightarrow$ она фундаментальна.
+  Последовательность $\{ x_n,\; n \in \setN \}$ сходится $\iff$ она фундаментальна.
 \end{theorem}
 
 \begin{theorem}[критерий Коши сходимости почти наверное]
   Последовательность $\{ \xi_n,\; n \in \setN \}$ сходится почти наверное 
-  $\Leftrightarrow \{ \xi_n, n \in \setN \}$ фундаментальна с вероятностью 1.
+  $\iff \{ \xi_n, n \in \setN \}$ фундаментальна с вероятностью 1.
 \end{theorem}
 
 \begin{proof}~
 
-  $(\Rightarrow)$ Пусть $\xi_n \toae \xi$.
+  $(\implies)$ Пусть $\xi_n \toae \xi$.
 
   Тогда если $\omega \in \condset{\omega}{\lim\limits_{n \to \infty} \xi_n(\omega) \xi(\omega)}$, 
   то $\omega \in \{ \{ \xi_n(\omega) \} \text{ -- фундаментальна} \}$\\
 
-  $\Rightarrow P(\{ \xi_n \} \text{ -- фундаментальна}) \geq 
+  $\implies P(\{ \xi_n \} \text{ -- фундаментальна}) \geq 
   P(\lim\limits_{n \to \infty} \xi_n = \xi) = 1$\\
 
   $(\Leftarrow)$ Обозначим $A = \{ \{ \xi_n \} \text{ -- фундаментальна} \}$
@@ -320,10 +320,10 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
 
   Если же $\omega \not\in A$, то положим $\xi(\omega) := 0$
 
-  Тогда $\xi_n I_A \to \xi \Rightarrow \xi$ -- случайная величина(как предел случайных величин)
+  Тогда $\xi_n I_A \to \xi \implies \xi$ -- случайная величина(как предел случайных величин)
   \begin{align*}
     &P(\xi_n \to \xi) \leq P(\{ \xi_n \to \xi \} \cap A) = P(A) = 1\\
-    &\Rightarrow \xi_n \toae \xi
+    &\implies \xi_n \toae \xi
   \end{align*}
 
 \end{proof}
@@ -331,7 +331,7 @@ $\xi_1 \ldots \xi_n \ldots$ -- результаты независимых пр�
 \begin{lemma}[критерий фундаментальности с вероятностью 1]~
 
   Последовательность $\{ \xi_n,\; n \in \setN \}$ фундаментальна с вероятностью 1 
-  $\Leftrightarrow$ для $\forall \epsilon > 0:$
+  $\iff$ для $\forall \epsilon > 0:$
   \begin{align*}
     P(\sup_{k \geq n} |\xi_k - \xi_n| \geq \epsilon) \todown{n \to \infty} 0
   \end{align*}

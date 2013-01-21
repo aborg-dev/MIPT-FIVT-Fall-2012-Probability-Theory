@@ -48,7 +48,7 @@
 \item
 	$\setF$ --- $\sigma$-алгебра подмножеств на $\Omega$.\\
 	Элементы $\setF$ называются \emph{событиями}.\\
-	$\forall A \in \setF \Rightarrow A \subset \Omega$.
+	$\forall A \in \setF \implies A \subset \Omega$.
 
 \end{enumerate}
 
@@ -57,8 +57,8 @@
 
 	\begin{enumerate}
 		\item $\Omega \in \setF$
-		\item $\forall A,B \in \setF \Rightarrow A \cap B \in \setF$
-		\item $\forall A,B \in \setF \Rightarrow A \bigtriangleup B \in \setF$\\
+		\item $\forall A,B \in \setF \implies A \cap B \in \setF$
+		\item $\forall A,B \in \setF \implies A \bigtriangleup B \in \setF$\\
 	\end{enumerate}
 
 \end{definition}
@@ -66,9 +66,9 @@
 \begin{exercise}
 	Алгебра замкнута относительно операций:
 	\begin{enumerate}
-		\item $A, B \in \setF \Rightarrow A \cup B \in \setF$
-		\item $A, B \in \setF \Rightarrow A \setminus B \in \setF$
-		\item $A \in \setF \Rightarrow \comp{A} \in \setF$\\
+		\item $A, B \in \setF \implies A \cup B \in \setF$
+		\item $A, B \in \setF \implies A \setminus B \in \setF$
+		\item $A \in \setF \implies \comp{A} \in \setF$\\
 	\end{enumerate}
 \end{exercise}
 
@@ -91,7 +91,7 @@
 	\begin{enumerate}
 		\item $\setF$ --- алгебра
 		\item $\forall \braces{A_n, n \in \setN}, A_n \in \setF \; \forall n 
-					\Rightarrow \bigcup\limits_{n = 1}^{+\infty} A_n \in \setF$\\
+					\implies \bigcup\limits_{n = 1}^{+\infty} A_n \in \setF$\\
 	\end{enumerate}
 \end{definition}
 
@@ -148,23 +148,23 @@
 	\begin{proof}~
 		\begin{enumerate}
 			\item 
-				$\displaystyle \forall n \; A_n = \emptyset \Rightarrow
+				$\displaystyle \forall n \; A_n = \emptyset \implies
 				P\pars{\bigsqcup_{n = 1}^{\infty} A_n} = \sum_{n = 1}^{\infty} P(A_n) = 
 				\sum_{n = 1}^{\infty} P(\emptyset) < +\infty
-				\Rightarrow P(\emptyset) = 0$
+				\implies P(\emptyset) = 0$
 
 			\item 
 				$\displaystyle A_1 = A,\; A_2 = B,\; A_3 = A_4 = \ldots = A_n = \ldots = \emptyset \\ 
 				P\pars{\bigsqcup_{n = 1}^{\infty} A_n} = P(A \cup B) = \sum_{n = 1}^{\infty} P(A_n) = P(A) + P(B)$
 
-			\item $\Omega = A \sqcup \comp{A} \Rightarrow \expl{по 2} \Rightarrow 
+			\item $\Omega = A \sqcup \comp{A} \implies \expl{по 2} \implies 
 						1 = P(A) + P(\comp{A})$
 
 			\item 
 				$A \cup B = A \sqcup (B \setminus (A \cap B)) \\
-					\Rightarrow P(A \cup B) = P(A) + P(B \setminus (A \cap B))\\\\
+					\implies P(A \cup B) = P(A) + P(B \setminus (A \cap B))\\\\
 				B = (A \cap B) \sqcup (B \setminus (A \cap B)) \\
-					\Rightarrow P(B) = P(A \cap B)  + P(B \setminus (A \cap B))$
+					\implies P(B) = P(A \cap B)  + P(B \setminus (A \cap B))$
 
 				Осталось вычесть одно равенство из другого.
 
@@ -197,21 +197,21 @@
 		\item $P(\Omega) = 1$
 		\item $P$ - конечно-аддитивна. 
 	\end{enumerate}
-	Тогда $P$ - вероятностная мера $\Leftrightarrow P$ - непрерывна в нуле(т.е если $A_n  \downarrow \emptyset$, то $P(A_n) \rightarrow 0).$
+	Тогда $P$ - вероятностная мера $\iff P$ - непрерывна в нуле(т.е если $A_n  \downarrow \emptyset$, то $P(A_n) \rightarrow 0).$
 \end{theorem}
 
 \begin{proof}~
 
-	$(\Rightarrow)$ Пусть $P$ - вероятностная мера, а $A_n \downarrow \emptyset.$
+	$(\implies)$ Пусть $P$ - вероятностная мера, а $A_n \downarrow \emptyset.$
 
 	Рассмотрим $B_m = A_m \setminus A_{m+1}.$ Тогда в силу $\bigcap\limits_n A_n = \emptyset
-	\Rightarrow \bigsqcup\limits_{m = n}^{\infty} B_m = A_n$
+	\implies \bigsqcup\limits_{m = n}^{\infty} B_m = A_n$
 
 	Тогда в силу счетной аддитивности $P(A_n) = \sum\limits_{m = n}^{\infty} P(B_m)$
 
 	Но ряд $P(A_1) = \sum\limits_{m=1}^{\infty} P(B_m) $ сходится
-	$\Rightarrow \sum\limits_{m=n}^{\infty} P(B_m)$ есть остаток сходящего ряда 
-	$\Rightarrow P(A_n) \rightarrow 0$\\
+	$\implies \sum\limits_{m=n}^{\infty} P(B_m)$ есть остаток сходящего ряда 
+	$\implies P(A_n) \rightarrow 0$\\
 
 	$(\Leftarrow)$ Пусть $P$ непрерывна в нуле. 
 
@@ -224,8 +224,8 @@
 
 	Покажем, что $\bigcap\limits_m B_m = \emptyset $. \\
 	Пусть $\omega \in \bigcap\limits_m B_m 
-	\Rightarrow \omega \in B_1 \Rightarrow \exists k: \omega \in A_k 
-	\Rightarrow \omega \not\in B_{k+1}$. Противоречие.
+	\implies \omega \in B_1 \implies \exists k: \omega \in A_k 
+	\implies \omega \not\in B_{k+1}$. Противоречие.
 
 	Следовательно, $\bigcap\limits_m B_m = \emptyset$ и в силу непрерывности в нуле 
 	$P(B_m) \to 0$.
@@ -234,7 +234,7 @@
 	P\pars{\bigsqcup_{n=1}^{m} A_m \sqcup B_{m+1}} 
 	= \expl{конечная аддитивность} = \\
 	= \sum_{n=1}^{m} P(A_n) + P(B_{m + 1}) \to \sum_{n = 1}^{\infty} P(A_n),\; m \to \infty\\
-	\Rightarrow P\pars{\bigsqcup_n A_n} = \sum_n P(A_n)$
+	\implies P\pars{\bigsqcup_n A_n} = \sum_n P(A_n)$
 \end{proof}
 
 \begin{corollary}[непрерывность вероятностной меры]~

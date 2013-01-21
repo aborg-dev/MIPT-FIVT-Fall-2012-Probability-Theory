@@ -29,21 +29,21 @@
 	\begin{enumerate}
 		\item $\Omega \in \setL : P(\Omega) = Q(\Omega)$
 		\item 
-			Пусть $A, B \in \setL$. $A \subset B \Rightarrow$
+			Пусть $A, B \in \setL$. $A \subset B \implies$
 			\begin{align*}
 				P(B \setminus A) = P(B) - P(A) = Q(B) - Q(A) = Q(B \setminus A) 
-				\Rightarrow (B \setminus A) \in \setL
+				\implies (B \setminus A) \in \setL
 			\end{align*}
 		\item 
 			Пусть $A_n \uparrow A,\; A_n \in \setL \quad \forall n$. Тогда 
 			\begin{align*}
 				&P(A) = \expl{непрерывность вероятностной меры} = \lim_n P(A_n) = \lim_n Q(A_n) =\\
 				&= \expl{непрерывность вероятностной меры} = Q(A)\\
-				&\Rightarrow A \in \setL
+				&\implies A \in \setL
 			\end{align*}
 	\end{enumerate}
 			Доказали, что $\setL$ -- $\lambda$-система. По условию $\setM \subset \setL 
-			\Rightarrow$ $\lambda (\setM) \subset \setL$. По теореме о монотонных классах получаем, 
+			\implies$ $\lambda (\setM) \subset \setL$. По теореме о монотонных классах получаем, 
 			что $\sigma(\setM) \subset \setL$, т.е. 
 			\begin{equation*}
 				P |_{\sigma(\setM)} = Q |_{\sigma(\setM)}
@@ -53,11 +53,11 @@
 \begin{corollary}[единственность в теореме Каратеодори]~
 
 	Пусть $P$ и $Q$ -- два продолжения $P_\sigma$ на $\sigma(\setA)$. 
-	Но $\setA$ -- алгебра $\Rightarrow \pi$-система.
+	Но $\setA$ -- алгебра $\implies \pi$-система.
 	\begin{align*}
 		P |_\setA = P_\sigma = Q |_\setA
 	\end{align*}
-	$\Rightarrow$ по лемме получаем, что $\forall A \in \sigma(\setA)$\\
+	$\implies$ по лемме получаем, что $\forall A \in \sigma(\setA)$\\
 	$P(A) = Q(A)$, т.е продолжение единственно.\\
 \end{corollary}
 
@@ -98,19 +98,19 @@
 
 		\item 
 			Пусть $x_n \rightarrow -\infty$ при $n \rightarrow \infty$. 
-			Тогда $(-\infty; x_n] \downarrow \emptyset\; \Rightarrow$ по непрерывности вероятностной меры.
+			Тогда $(-\infty; x_n] \downarrow \emptyset\; \implies$ по непрерывности вероятностной меры.
 			\begin{align*}
 				F(x_n) = P((-\infty, x_n]) \todown{n \to \infty} P(\emptyset) = 0
 			\end{align*}
 
-			Аналогично, если $x_n \to +\infty$, то $(-\infty; x_n] \uparrow \setR\; \Rightarrow$ 
+			Аналогично, если $x_n \to +\infty$, то $(-\infty; x_n] \uparrow \setR\; \implies$ 
 			в силу непрерывности вероятностой меры.
 			\begin{align*}
 				F(x_n) = P((-\infty; x_n])) \todown{n \to \infty} P(\setR) = 1
 			\end{align*}
 
 		\item 
-			Пусть убывающая $x_n \to x + 0$ Тогда $(-\infty, x_n]) \downarrow (-\infty; x]\; \Rightarrow$ 
+			Пусть убывающая $x_n \to x + 0$ Тогда $(-\infty, x_n]) \downarrow (-\infty; x]\; \implies$ 
 			в силу непрерывности вероятностой меры.
 			\begin{align*}
 				F(x_n) = P((-\infty; x_n]) \todown{n \to \infty} P((-\infty; x]) = F(x)
@@ -125,7 +125,7 @@
 		$$\lim_{x \to a-0} F(x) = P((-\infty; a))$$
 		Каждая точка разрыва является скачком. Каждому скачку сопоставим отрезок.
 		Отрезки скачков не пересекаются, так как функция монотонная. 
-		В каждом из них найдется рациональная точка $\Rightarrow$ точек разрыва не более чем счетно.
+		В каждом из них найдется рациональная точка $\implies$ точек разрыва не более чем счетно.
 	\end{proof}
 \end{corollary}
 

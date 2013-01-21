@@ -66,7 +66,7 @@
       P(\{ |\xi_n| \geq n\} \text{ б.ч.}) = 0
     \end{align*}
 
-    $\Rightarrow$ с вероятностью 1 $\forall n$, кроме конечного числа, 
+    $\implies$ с вероятностью 1 $\forall n$, кроме конечного числа, 
     выполнено $\{ |\xi_n| \leq n \}$.
 
     Обозначим $\widetilde{\xi_n} = \xi_n\; I \{ |\xi_n| \leq n \}$. 
@@ -96,7 +96,7 @@
     Значит
     \begin{align*}
       \frac{\widetilde{\xi_1} + \ldots + \widetilde{\xi_n}}{n} \toae 0
-      \Leftrightarrow \frac{(\widetilde{\xi_1} - E \widetilde{\xi_1}) 
+      \iff \frac{(\widetilde{\xi_1} - E \widetilde{\xi_1}) 
       + \ldots + (\widetilde{\xi_n} - E \widetilde{\xi_n})}{n} \toae 0
     \end{align*}
 
@@ -210,7 +210,7 @@ $\underline{\text{Вопрос}}$: можно ли вычислить $E g(\xi)$
       &\int\limits_B g_n (x) P_{\xi} (dx) \todown{n \to \infty} \int\limits_B g(x) P_{\xi} (dx)
     \end{align*}
 
-    $\Rightarrow$ доказано для неотриц. $g(x)$.
+    $\implies$ доказано для неотриц. $g(x)$.
 
     В общем случае, пользуемся разложением $g(x) = g^+(x) - g^-(x)$ и линейностью математического ожидания.
   \end{proof}
@@ -267,7 +267,7 @@ $\underline{\text{Вопрос}}$: можно ли вычислить $E g(\xi)$
         Если $g(x) \geq 0$, 
         то $\sum\limits_{i = 1}^{n} g(x_i) I \{ \xi = x_i \} \uparrow g(\xi)$\\
 
-        $\Rightarrow$ по теореме о монотонной сходимости:
+        $\implies$ по теореме о монотонной сходимости:
         \begin{align*}
           E g(\xi) = \lim_{n \to \infty} \sum_{i = 1}^{n} g(x_i) P(\xi = x_i) = 
           \sum_{i = 1}^{\infty} g(x_i) P(\xi = x_i)
@@ -290,7 +290,7 @@ $\underline{\text{Вопрос}}$: можно ли вычислить $E g(\xi)$
         Пусть $\xi \sim Pois(\lambda)$. Найти $E\xi = ?$
 
         \begin{align*}
-          \xi \sim Pois(\lambda) \Rightarrow P(\xi = k) = \frac{\lambda^k e^{-\lambda}}{k!},
+          \xi \sim Pois(\lambda) \implies P(\xi = k) = \frac{\lambda^k e^{-\lambda}}{k!},
           \quad\text{ для $\forall k \in \setZ_+$}
         \end{align*}
         Тогда
@@ -322,7 +322,7 @@ $\underline{\text{Вопрос}}$: можно ли вычислить $E g(\xi)$
         С другой стороны,
         \begin{align*}
           &P(\xi \leq x) = P_{\xi} ((-\infty, x]) = \int\limits_{-\infty}^{x} P_{\xi} (dy)\\
-          &\Rightarrow P_{\xi}(dy) = f_{\xi} (y) dy
+          &\implies P_{\xi}(dy) = f_{\xi} (y) dy
         \end{align*}
 
         В итоге,
@@ -343,7 +343,7 @@ $\underline{\text{Вопрос}}$: можно ли вычислить $E g(\xi)$
 
         Тогда
         \begin{align*}
-          \Rightarrow E \xi = \int\limits_{R} x f_{\xi} (x) dx 
+          \implies E \xi = \int\limits_{R} x f_{\xi} (x) dx 
           = \int\limits_{\setR} x\, \frac{1}{\sqrt{2 \pi \sigma^2}}
             e^{- \frac{(x - a)^2}{2\sigma^2}} dx\\
           = \int\limits_{\setR} (x - a) \frac{1}{\sqrt{2 \pi \sigma^2}} 
