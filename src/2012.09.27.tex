@@ -1,11 +1,11 @@
 
 \begin{lemma}[о $\pi$- и $\lambda$- системах]
 	Система $\setF$ подмножеств $\Omega$ является $\sigma$-алгеброй \\
-	$\Leftrightarrow$ она является $\pi$-системой и $\lambda$-системой одновременно.
+	$\iff$ она является $\pi$-системой и $\lambda$-системой одновременно.
 	
 	\begin{proof}~
 
-		($\Rightarrow$) очевидно.
+		($\implies$) очевидно.
 
 		($\Leftarrow$) Для $\forall A, B \in \setF$
 
@@ -21,7 +21,7 @@
 
 		$A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$
 		
-		$\Rightarrow \setF$ является алгеброй
+		$\implies \setF$ является алгеброй
 
 		Покажем, что она $\sigma$-алгебра:\\
 		Пусть $\braces{ B_n, n \in \setN }$ - последовательность элементов из $\setF$, 
@@ -108,8 +108,8 @@
 \end{theorem}
 
 \begin{proof}
-	Заметим, что $\sigma(\setM)$ -- $\sigma$-алгебра, содержащая $\setM \Rightarrow \sigma(\setM)$ -- 
-	$\lambda$-система, содержащая $\setM \Rightarrow \lambda(\setM) \subset \sigma(\setM)$ 
+	Заметим, что $\sigma(\setM)$ -- $\sigma$-алгебра, содержащая $\setM \implies \sigma(\setM)$ -- 
+	$\lambda$-система, содержащая $\setM \implies \lambda(\setM) \subset \sigma(\setM)$ 
 	в силу минимальности.
 	
 	Согласно лемме о $\pi$- и $\lambda$-системах для того, чтобы доказать 
@@ -117,7 +117,7 @@
 	является $\pi$-системой.
 	
 	Действительно, тогда $\lambda(\setM)$  будем $\sigma$-алгеброй, 
-	содержащей $\setM \Rightarrow \sigma(\setM) \subset \lambda(\setM)$
+	содержащей $\setM \implies \sigma(\setM) \subset \lambda(\setM)$
 	
 	Рассмотрим следующую систему подмножеств:
 	\begin{equation*}
@@ -129,7 +129,7 @@
 	\begin{enumerate}
 		\item 
 			$\Omega \in \setM_1 ?$ Для $\forall A \in \setM$\\
-			$\Omega \cap A = A \in \setM \subset \lambda(\setM) \Rightarrow \Omega \in \setM$.
+			$\Omega \cap A = A \in \setM \subset \lambda(\setM) \implies \Omega \in \setM$.
 		
 		\item 
 			Пусть $A, B \in \setM_1$ и $A \subset B$. 
@@ -137,22 +137,22 @@
 
 			Пусть $C \in \setM$. Тогда $(B \setminus A) \cap C = (B \cap C) \setminus (A \cap C)$
 
-			Причем $(A \cap C) \subset (B \cap C) \Rightarrow$ по свойству 2) $\lambda$-системы\\
-			получаем, что $(B \setminus A) \cap C \in \lambda(M) \Rightarrow (B \setminus A) \in \setM_1$
+			Причем $(A \cap C) \subset (B \cap C) \implies$ по свойству 2) $\lambda$-системы\\
+			получаем, что $(B \setminus A) \cap C \in \lambda(M) \implies (B \setminus A) \in \setM_1$
 			
 		\item 
 			Пусть $\braces{B_n,\; n \in \setN}$ -- последовательность из $\setM_1$, 
 			причем $B_n \uparrow B$. Верно ли, что $B \in \setM_1 ?$
 
 			Для $\forall A \in \setM \quad (B_n \cap A) \uparrow (B \cap A)$. 
-			Но $(B_n \cap A) \in \lambda(\setM) \Rightarrow (B \cap A) \in \lambda(\setM)$ 
-			по свойству 3) $\lambda$-системы. $\Rightarrow B \in \setM_1$.
+			Но $(B_n \cap A) \in \lambda(\setM) \implies (B \cap A) \in \lambda(\setM)$ 
+			по свойству 3) $\lambda$-системы. $\implies B \in \setM_1$.
 
 	\end{enumerate}
 			Мы показали, что $\setM_1$ -- $\lambda$-система.
 
 			В силу того, что $\setM$ -- $\pi$-система, $\setM \subset \setM_1 
-			\Rightarrow \lambda(\setM) \subset \setM_1.$ 
+			\implies \lambda(\setM) \subset \setM_1.$ 
 			В силу минимальности. Но $\setM_1 \subset \lambda(\setM)$ по построению. \\
 			Следовательно, $\lambda(\setM) = \setM_1$, т.е. 
 			$\forall A \in \lambda(\setM) \quad \forall B \in \setM \quad A \cap B \in \lambda(\setM) (*)$
@@ -166,7 +166,7 @@
 			Точно также проверяется, что $\setM_2$ -- это $\lambda$-система.
 
 			$\setM \subset \setM_2$ т.к $\forall X \in \setM: X \in \setM_2$  (см. $(*)$).
-			Значит $\lambda(\setM) \subset \setM_2 \Rightarrow \lambda(\setM) = \setM_2$
+			Значит $\lambda(\setM) \subset \setM_2 \implies \lambda(\setM) = \setM_2$
 			
 			Значит $\lambda(\setM)$ -- $\pi$-система. То есть 
 			\begin{align*}
@@ -221,13 +221,13 @@
 
 	Пусть $\setM_1$ и $\setM_2$ -- $\pi$-системы в $\setF$.
 	Тогда $\sigma(\setM_1)$ и $\sigma(\setM_2)$ независимы 
-	$\Leftrightarrow \setM_1$ и $\setM_2$ -- независимы.
+	$\iff \setM_1$ и $\setM_2$ -- независимы.
 
 \end{lemma}
 
 \begin{proof}~
 
-	$(\Rightarrow)$ очевидно из определения
+	$(\implies)$ очевидно из определения
 
 	$(\Leftarrow)$ используем принцип подходящих множеств.
 
@@ -242,7 +242,7 @@
 			$\Omega \in \setL_1?$
 
 			$P(\Omega \cap A) = P(A) = P(A) \, P(\Omega) 
-			\Rightarrow $ независимы $\Rightarrow \Omega \in \setL_1$ 
+			\implies $ независимы $\implies \Omega \in \setL_1$ 
 
 		\item 
 			Пусть $A, B \in \setL_1$, причем $A \subset B$. \quad $B \setminus A \in \setL_1 ?$\\
@@ -251,8 +251,8 @@
 				&P(B \setminus A \cap C) = P((B \cap C) \setminus (A \cap C)) =
 				P(B \cap C) - P(A \cap C) = \\
 				&P(B) \, P(C) - P(A) \, P(C) = (P(B) - P(A)) P(C) = P(B \setminus A) \, P(C) \\
-				&\Rightarrow B \setminus A \text{ независимо с } C 
-				\Rightarrow \text{ независимо с } \setM_1 \Rightarrow B \setminus A \in \setL_1
+				&\implies B \setminus A \text{ независимо с } C 
+				\implies \text{ независимо с } \setM_1 \implies B \setminus A \in \setL_1
 			\end{align*}
 
 		\item
@@ -262,33 +262,33 @@
 			Пусть $A \in \setM_1$. Тогда $(B_n \cap A) \uparrow (B \cap A)$.
 			\begin{align*}
 				&P(B \cap A) = \expl{по теореме о непрерывности меры} = \lim_{n \to \infty} P(B_n \cap A) =\\
-				&= \expl{$B_n \in \setL_1 \Rightarrow B$ независимо с $A$} = \lim_{n \to \infty} P(B_n) P(A) =
+				&= \expl{$B_n \in \setL_1 \implies B$ независимо с $A$} = \lim_{n \to \infty} P(B_n) P(A) =
 				\expl{по теореме о непрерывности} = P(B) P(A)\\
-				&\Rightarrow B \text{ и } A \text{ независимы } \Rightarrow B \in \setL_1
+				&\implies B \text{ и } A \text{ независимы } \implies B \in \setL_1
 			\end{align*}
 
 	\end{enumerate}
 			Значит $\setL_1$ -- $\lambda$-система. По условию мы знаем, что $\setM_2$ независима
-			с $\setM_1 \Rightarrow \setM_2 \subset \setL_1 \Rightarrow$ по следствию из теоремы 
-			о монотонности $\Rightarrow \sigma(\setM_2) \subset \setL_1
-			\Leftrightarrow$ т.е. $\sigma(\setM_2)$ независимо с $\setM_1$ \\
+			с $\setM_1 \implies \setM_2 \subset \setL_1 \implies$ по следствию из теоремы 
+			о монотонности $\implies \sigma(\setM_2) \subset \setL_1
+			\iff$ т.е. $\sigma(\setM_2)$ независимо с $\setM_1$ \\
 
 			Рассмотрим по аналогии 
 			\begin{align*}
 				\setL_2 = \condset{A \in \setF}{A \text{ независимо с } \sigma(\setM_2)}
 			\end{align*}
 
-			Аналогично $\Rightarrow \setL_2$ -- $\lambda$-система.
+			Аналогично $\implies \setL_2$ -- $\lambda$-система.
 
 			По теореме о монотонных классах, в силу того, что $\setM_1 \subset \setL_2$,
 			получаем, что $\sigma(\setM_1) \subset \setL_2 
-			\Rightarrow \sigma(\setM_1)$ независимо с $\sigma(\setM_2)$.
+			\implies \sigma(\setM_1)$ независимо с $\sigma(\setM_2)$.
 		
 \end{proof}
 
 \begin{corollary}
 	Пусть $\setM_1 \ldots \setM_n$ -- $\pi$-системы в $\setF$. Тогда $\setM_1, \ldots, \setM_n$
-	независимы в совокупности $\Leftrightarrow \sigma(\setM_1), \ldots \sigma(\setM_n)$ 
+	независимы в совокупности $\iff \sigma(\setM_1), \ldots \sigma(\setM_n)$ 
 	независимы в совокупности.
 \end{corollary}
 

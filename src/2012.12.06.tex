@@ -129,7 +129,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 \end{definition}
 
 \begin{corollary}
-  С.в. $\xi_n \toup{d} \xi \Leftrightarrow F_{\xi_n} \toup{w} F_{\xi}$
+  С.в. $\xi_n \toup{d} \xi \iff F_{\xi_n} \toup{w} F_{\xi}$
 
   \begin{proof}
     \begin{align*}
@@ -152,7 +152,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
   где $\setC(F)$ -- множество точек непр. функции $F(x)$
 
   \begin{designation}
-    $F_n \Rightarrow F$
+    $F_n \implies F$
   \end{designation}
 \end{definition}
 
@@ -172,8 +172,8 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 \end{definition}
 
 \begin{corollary}
-  С.в. $\xi_n \toup{d} \xi \Leftrightarrow 
-  F_{\xi_n} \toup{w} F_\xi \Leftrightarrow 
+  С.в. $\xi_n \toup{d} \xi \iff 
+  F_{\xi_n} \toup{w} F_\xi \iff 
   P_{\xi_n} \toup{w} P_\xi$
 \end{corollary}
 
@@ -186,7 +186,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 \end{definition}
 
 \begin{designation}
-  $P_n \Rightarrow P$
+  $P_n \implies P$
 \end{designation}
 
 \begin{theorem}[Александров]~
@@ -197,7 +197,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
     \item $P_n \toup{w} P$
     \item $\limup_n P_n (A) \leq P(A), \quad \forall \text{ замкнутого } A$
     \item $\limdown_n P_n (A) \geq P(A), \quad \forall \text{ открытого } A$
-    \item $P_n \Rightarrow P$
+    \item $P_n \implies P$
   \end{enumerate}
 \end{theorem}
 
@@ -209,15 +209,15 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
   Тогда следующие условия эквивалентны:
   \begin{enumerate}
     \item $P_n \toup{w} P$
-    \item $P_n \Rightarrow P$
+    \item $P_n \implies P$
     \item $F_n \toup{w} P$
-    \item $F_n \Rightarrow F$
+    \item $F_n \implies F$
   \end{enumerate}
 
   \begin{proof}
     По теореме Александрова достаточно проверить, что $(2)$ эквивалентно $(4)$.
 
-    $(2) \Rightarrow (4):$ 
+    $(2) \implies (4):$ 
 
     Пусть $x \in \setC(F)$
 
@@ -228,7 +228,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
       F_n(x) = P_n((-\infty; x]) \todown{P_n \to P} P((-\infty; x]) = F(x)
     \end{align*}
 
-    $(4) \Rightarrow (2):$ 
+    $(4) \implies (2):$ 
 
     Для установления $(2)$ по теореме Александрова достаточно проверить, 
     что $\limdown_n P_n(A) \geq P(A), \forall A$ -- откр. из $\setR$
@@ -260,7 +260,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
     \end{align*}
     Но $P_n(I_k') = P((a_k', b_k'])) = F_n(b_k') - F_n(a_k')
     \todown{n \to \infty} F(b_k') - F(a_k')$, 
-    так как $a_k', b_k'$ -- точки непр. $F(x)$. Значит $F_n \Rightarrow F$
+    так как $a_k', b_k'$ -- точки непр. $F(x)$. Значит $F_n \implies F$
     \begin{align*}
       \circled{=} \sum_{k = 1}^{\infty} (F(b_k') - F(a_k')) 
       = \sum_{k = 1}^{\infty} P((a_k', b_k']) 
@@ -276,7 +276,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 \begin{corollary}
   Пусть $\{ \xi_n,\; n \in \setN \}$, $\xi$ -- с.в. 
   Тогда $\xi_n \toup{d} \xi$
-  $\Leftrightarrow$ $F_{\xi_n}(x) \todown{n \to \infty} F_{\xi} (x)$ 
+  $\iff$ $F_{\xi_n}(x) \todown{n \to \infty} F_{\xi} (x)$ 
   для $\forall x \in \setC (F_\xi)$\\
 \end{corollary}
 
@@ -338,10 +338,10 @@ $P(a \leq S_n \leq b)$ при очень больших $n$ затрудните
   то $\xi_n \toup{d} \eta \sim Pois(\lambda)$
 
   \begin{proof}
-    $\xi_n \toup{d} \eta \Leftrightarrow 
+    $\xi_n \toup{d} \eta \iff 
     \forall x \in \setC(F_{\eta}): F_{\xi_n}(x) \to F_{\eta}(x)$
     Но $\xi_n$ и $\eta$ принимает значения $\setZ_+ 
-    \Rightarrow \forall x \in \setR \setminus \setZ_+:$
+    \implies \forall x \in \setR \setminus \setZ_+:$
 
     \begin{align*}
       F_{\xi_n} (x) = \sum_{\substack{k \leq x\\k \in \setZ_+}} 
@@ -378,7 +378,7 @@ $P(a \leq S_n \leq b)$ при очень больших $n$ затрудните
   \begin{proof}
     Обозначим $\xi_n := \frac{S_n - np}{\sqrt{npq}}$
 
-    Тогда $\xi_n \toup{d} \eta \sim N(0, 1) \Leftrightarrow \forall x \in \setR$
+    Тогда $\xi_n \toup{d} \eta \sim N(0, 1) \iff \forall x \in \setR$
     \begin{align*}
       F_{\xi_n} (x) \todown{n \to \infty} F_{\eta} (x) 
       = \int\limits_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} e^{-\frac{y^2}{2}} dy

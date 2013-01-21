@@ -24,7 +24,7 @@
   Пусть $(\Omega, \setF)$ и $(E, \mathcal{E})$ -- два измеримых пространства, 
   $X\colon \Omega \to E$.
   Пусть $\setM \subset \mathcal{E}$ таково, что $\sigma(\setM) = \mathcal{E}$. 
-  Тогда $X$ является случайным элементом $\Leftrightarrow$ для $\forall B \in \setM$
+  Тогда $X$ является случайным элементом $\iff$ для $\forall B \in \setM$
 
   \begin{align*}
     X^{-1}(B) = \condset{\omega}{X(\omega) \in B} \in \setF
@@ -34,7 +34,7 @@
 
 \begin{proof}~
 
-  $(\Rightarrow)$ очевидно из определения\\
+  $(\implies)$ очевидно из определения\\
 
   $(\Leftarrow)$ \\
   Рассмотрим систему множеств
@@ -53,21 +53,21 @@
   Тогда
   \begin{enumerate}
     \item 
-      $X^{-1}(E) = \Omega \in \setF \Rightarrow E \in D$
+      $X^{-1}(E) = \Omega \in \setF \implies E \in D$
 
     \item  
       $X^{-1}\pars{\bigcup\limits_{n = 1}^{\infty} D_n} = \{ D_n \in D \} = 
       \bigcup\limits_{n = 1}^{\infty} X^{-1}(D_n) \in \setF 
-      \Rightarrow \bigcup\limits_{n = 1}^{\infty} D_n \in D$
+      \implies \bigcup\limits_{n = 1}^{\infty} D_n \in D$
 
     \item
       Если $B, A \in D$, то
       $X^{-1}(B \setminus A) = X^{-1}(B) \setminus X^{-1}(A) \in \setF 
-      \Rightarrow B \setminus A \in D$
+      \implies B \setminus A \in D$
   \end{enumerate}
 
   $D$ -- $\sigma$-алгебра и по условию $\setM \subset D$
-  $\Rightarrow$ в силу минимальности $\sigma(\setM) = \mathcal{E} \subset D$ (А значит $E = D$)\\
+  $\implies$ в силу минимальности $\sigma(\setM) = \mathcal{E} \subset D$ (А значит $E = D$)\\
   т.е $\forall  B \in \mathcal{E} : X^{-1}(B) \in \setF$
   и, стало быть, $X$ -- случайный элемент.
 \end{proof}
@@ -77,19 +77,19 @@
   \begin{enumerate}
     \item 
       $X$ -- случайная величина на $(\Omega, \setF)$
-      $\Leftrightarrow \forall x \in \setR :
+      $\iff \forall x \in \setR :
        \{ X \leq x \} = 
       \condset{\omega}{X(\omega) \leq x} \in \setF$
 
     \item $X = (X_1, \ldots, X_n)$ -- случайный вектор на $(\Omega, \setF)$
-          $\Leftrightarrow \forall i : X_i$ -- случайная величина.
+          $\iff \forall i : X_i$ -- случайная величина.
   \end{enumerate}
 
 \end{corollary}
 
 \begin{proof}~
 
-  $(\Rightarrow)$ 1) и 2) очевидно из определения случайных величин и векторов\\
+  $(\implies)$ 1) и 2) очевидно из определения случайных величин и векторов\\
 
   $(\Leftarrow)$ \nolinebreak
   \begin{enumerate}
@@ -108,7 +108,7 @@
         = \bigcap_{i = 1}^{n} X^{-1}_i (B_i) \in \setF
       \end{align*}
 
-      $\Rightarrow X^{-1} (B) \in \setF$ для $\forall B \in \setM$. По лемме получаем, 
+      $\implies X^{-1} (B) \in \setF$ для $\forall B \in \setM$. По лемме получаем, 
       что $X$ -- случайный вектор.
   \end{enumerate}
 
@@ -145,7 +145,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
     =\condset{\omega}{\xi(\omega) \in \phi^{-1} (B)} \in \setF 
     \quad\text{ (т.к $\phi^{-1}(B) \in B(\setRn)$) }
   \end{align*}
-  $\Rightarrow \phi(\xi)$ -- случайный вектор.
+  $\implies \phi(\xi)$ -- случайный вектор.
 \end{proof}
 
 \begin{theorem}
@@ -162,8 +162,8 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
 \end{corollary}
 
 \begin{proof}
-  $\phi(x, y) = x y$ или $x + y$ -- непрерывные функции в $\setR^2 \Rightarrow$ борелевские.\\
-  Константа $c$ -- случайная величина $\Rightarrow$ по лемме получаем, 
+  $\phi(x, y) = x y$ или $x + y$ -- непрерывные функции в $\setR^2 \implies$ борелевские.\\
+  Константа $c$ -- случайная величина $\implies$ по лемме получаем, 
   что $c\, \xi,\; \xi + c,\; \xi + \eta,\; \xi - \eta$ --- случайные величины.\\
 
   Рассмотрим
@@ -173,7 +173,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
                       0, &y = 0
                     \end{cases}$
 
-  Она тоже борелевская(кусочно-непрерывная) $\Rightarrow \phi(\xi, \eta) = \dfrac{\xi}{\eta}$ ---
+  Она тоже борелевская(кусочно-непрерывная) $\implies \phi(\xi, \eta) = \dfrac{\xi}{\eta}$ ---
   тоже случайная величина.
 \end{proof}
 
@@ -191,18 +191,18 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
   \begin{align*}
     &\condset{\omega}{\sup_n \xi_n (\omega) \leq x} = 
     \bigcap_{n = 1}^{\infty} \{ \xi_n \leq x \} \in \setF\\
-    &\Rightarrow \sup_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\implies \sup_n \xi_n (\omega) \text{ -- случайная величина }\\
     &\condset{\omega}{\inf_n \xi_n (\omega) \geq x} = 
     \bigcap_{n = 1}^{\infty} \{ \xi_n \geq x \} \in \setF\\
-    &\Rightarrow \inf_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\implies \inf_n \xi_n (\omega) \text{ -- случайная величина }\\
     &\condset{\omega}{\limup_n \xi_n (\omega) \leq x} = 
     \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
     \bigcap_{n = m}^{\infty} \{ \xi_n \leq x + \frac{1}{k} \} \in \setF\\
-    &\Rightarrow \limup_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\implies \limup_n \xi_n (\omega) \text{ -- случайная величина }\\
     &\condset{\omega}{\limdown_n \xi_n (\omega) \geq x} = 
     \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
     \bigcap_{n = m}^{\infty} \{ \xi_n \geq x - \frac{1}{k} \} \in \setF\\
-    &\Rightarrow \limdown_n \xi_n (\omega) \text{ -- случайная величина }\\
+    &\implies \limdown_n \xi_n (\omega) \text{ -- случайная величина }\\
   \end{align*}
 \end{proof}
 

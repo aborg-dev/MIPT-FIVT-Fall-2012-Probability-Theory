@@ -30,8 +30,8 @@
 \end{definition}
 
 \begin{corollary}
-  $\phi_\xi (t)$ -- х.ф. с.в. $\xi \Leftrightarrow  \phi_{\xi} (t)$ -- х.ф. $F_{\xi}(x)$
-  $\Leftrightarrow \phi_{\xi} (t)$ -- х.ф. $P_{\xi}$ (распр. $\xi$)
+  $\phi_\xi (t)$ -- х.ф. с.в. $\xi \iff  \phi_{\xi} (t)$ -- х.ф. $F_{\xi}(x)$
+  $\iff \phi_{\xi} (t)$ -- х.ф. $P_{\xi}$ (распр. $\xi$)
 
   \begin{proof}
     \begin{align*}
@@ -67,8 +67,8 @@
 
 \begin{corollary}
   Если $\xi = (\xi_1, \ldots, \xi_n)$ -- сл. вектор, то
-  $\phi_\xi(t)$ -- х.ф. $\xi \Leftrightarrow \phi_\xi(t)$ -- х.ф. $F_\xi (x), x~\in~\setRn
-  \Leftrightarrow \phi_\xi (t)$ -- х.ф. $P_\xi$
+  $\phi_\xi(t)$ -- х.ф. $\xi \iff \phi_\xi(t)$ -- х.ф. $F_\xi (x), x~\in~\setRn
+  \iff \phi_\xi (t)$ -- х.ф. $P_\xi$
 \end{corollary}
 
 \begin{example}~
@@ -141,11 +141,11 @@
       
       При $h \to 0, \; e^{i h \xi} - 1 \to 0$ п.н. 
 
-      Кроме того, $E|e^{i h \xi} - 1| \leq 2 \Rightarrow$
+      Кроме того, $E|e^{i h \xi} - 1| \leq 2 \implies$
       по теореме Лебега о мажорируемой сходимости:
 
       $E|e^{i h \xi} - 1| \todown{h \to 0} 0$ 
-      $\Rightarrow \phi(t)$  равномерно непрерывна на $\setR$.
+      $\implies \phi(t)$  равномерно непрерывна на $\setR$.
     \end{proof}
 
   \item
@@ -159,7 +159,7 @@
 
   \item
     Пусть $\phi(t)$ -- х.ф. с.в. $\xi$. 
-    Тогда $\phi(t)$ -- действительнозначная $\Leftrightarrow$ распределение $\xi$ 
+    Тогда $\phi(t)$ -- действительнозначная $\iff$ распределение $\xi$ 
     симметрично, т.е. $\forall B \in B(\setR)$
     \begin{align*}
       P(\xi \in B) = P(\xi \in -B)
@@ -168,22 +168,22 @@
     \begin{proof}~
 
       $(\Leftarrow)$ Пусть распр. $\xi$ -- симметрично. 
-      Тогда $\xi \equp{d} -\xi \Rightarrow$
+      Тогда $\xi \equp{d} -\xi \implies$
       \begin{align*}
         &E sin(t\xi) = E sin(-t\xi) = -E sin(t\xi)\\
-        &\Rightarrow E sin(t\xi) = 0 \Rightarrow \phi(t) = E e^{i t \xi} = E cos(t \xi) \in \setR
+        &\implies E sin(t\xi) = 0 \implies \phi(t) = E e^{i t \xi} = E cos(t \xi) \in \setR
       \end{align*}
       -- действительнозначная.\\
 
-      $(\Rightarrow)$ Пусть $\phi(t) \in \setR, \, \forall t \in \setR$.
+      $(\implies)$ Пусть $\phi(t) \in \setR, \, \forall t \in \setR$.
       Тогда по свойствам \circled{2} и \circled{4}.
       \begin{align*}
         \phi(t) = \phi_\xi (t) = \overline{\phi_\xi (-t)} = \phi_{\xi} (-t) = \phi_{-\xi} (t)
       \end{align*}
       т.е. у $\xi$ и у $-\xi$  одинаковая х.ф. 
-      $\Rightarrow$ по теореме о единственности функции распр. $\xi$ и $-\xi$ совпадают.
+      $\implies$ по теореме о единственности функции распр. $\xi$ и $-\xi$ совпадают.
 
-      $\Rightarrow \xi \equp{d} -\xi$ и, значит, для $\forall B \in B(\setR):$
+      $\implies \xi \equp{d} -\xi$ и, значит, для $\forall B \in B(\setR):$
       \begin{align*}
         P(\xi \in B) = P(-\xi \in B) = P(\xi \in -B)
       \end{align*}
@@ -199,7 +199,7 @@
       \begin{proof}
         \begin{align*}
           &\phi_{S_n} (t) = E e^{i S_n t} = E e^{i \xi_1 t} \ldots e^{i \xi_n t} 
-          = \expl{с.в независимы $\Rightarrow$ $e^{\text{с.в}}$ независимы} =\\
+          = \expl{с.в независимы $\implies$ $e^{\text{с.в}}$ независимы} =\\
           &= \pars{E e^{i \xi t}} \ldots \pars{E e^{i \xi_n t}} 
           = \prod_{k = 1}^{n} \phi_{\xi_k} (t)
         \end{align*}
@@ -244,7 +244,7 @@
       При $h \to 0, \; \dfrac{e^{i h \xi} - 1}{h} \to i \xi$ п.н., 
       кроме того $\walls{ \dfrac{e^{i h \xi} - 1}{h} } \leq |\xi|$
 
-      $\Rightarrow$ по теореме Лебега.
+      $\implies$ по теореме Лебега.
       \begin{align*}
         E \pars{e^{i t \xi}\, \frac{e^{i h \xi} - 1}{h}} \todown{h \to 0} E(i \xi e^{i t \xi})
         = \int\limits_{\setR} (i x) e^{i t x} P_\xi (dx) = \phi'_{\xi} (t)
@@ -269,7 +269,7 @@
         &e^{i t \xi(\omega)} = \sum_{k = 0}^{n - 1} \frac{(i t \xi)^k}{k!} 
         + \frac{(i t \xi)^n}{n!} (\cos (\theta_1(\omega) t \xi(\omega)) 
         + i \sin (\theta_1(\omega) t \xi(\omega)))\\
-        &\Rightarrow \phi_{\xi} (t) = E e^{i t \xi} 
+        &\implies \phi_{\xi} (t) = E e^{i t \xi} 
         = \sum_{k = 0}^{n - 1} \frac{(i t)^k}{k!} E \xi^k
         + \frac{(i t)^n}{n!} E (\xi^n (\cos (\theta_1 t \xi) + i \sin (\theta_1 t \xi)) =\\
         &= \sum_{k = 0}^{n} \frac{(i t)^k}{k!} E \xi^k + \frac{(i t)^n}{n!} \epsilon_n (t)
@@ -364,7 +364,7 @@
       = \limup_n \pars{\frac{e^n}{2^n n^n}}^{\frac{1}{2n}} = 0 < \frac{1}{T},\; \forall T
     \end{align*}
 
-    $\Rightarrow \phi_\xi (t)$ разлагается в ряд на всей прямой.
+    $\implies \phi_\xi (t)$ разлагается в ряд на всей прямой.
 
     Осталось его посчитать
     \begin{align*}
@@ -386,7 +386,7 @@
     \begin{proof}
       Если $\xi \sim N(a, \sigma^2), $ то $\eta = \frac{\xi - a}{\sigma} \sim N(0, 1)$
 
-      $\Rightarrow \phi_{\xi}(t) = e^{i t a} \phi_{\eta} (t \sigma) = e^{i t a - \frac{t^2 \sigma^2}{2}}$
+      $\implies \phi_{\xi}(t) = e^{i t a} \phi_{\eta} (t \sigma) = e^{i t a - \frac{t^2 \sigma^2}{2}}$
     \end{proof}
   \end{corollary}
 \end{example}
@@ -419,13 +419,13 @@
 
     Заметим, что $f_\epsilon^n (x)$ явл. периодической с периодом $2n$
 
-    $\Rightarrow$  т.к. $| f_\epsilon^n (x) | \leq 2$ для $\forall x \in [-n, n]$, то 
+    $\implies$  т.к. $| f_\epsilon^n (x) | \leq 2$ для $\forall x \in [-n, n]$, то 
     $|f(x)| \leq 1$ и $|f_{\epsilon}^n (x)| \leq 2$, для $\forall x \in \setR$.
 
     По условию $\forall t \in \setR$
     \begin{align*}
       &\int\limits_{\setR} e^{i t x} dF(x) = \int\limits_{\setR} e^{i t x} dG(x)\\
-      &\Rightarrow \int\limits_{\setR} f_{\epsilon}^n (x) dF(x) 
+      &\implies \int\limits_{\setR} f_{\epsilon}^n (x) dF(x) 
       = \int\limits_{\setR} f_{\epsilon}^n (x) dG(x)
     \end{align*}
 
@@ -452,7 +452,7 @@
 
     При $\epsilon \to 0, f_{\epsilon}(x) \to I_{(a, b]} (x)$
     
-    При этом $|f_{\epsilon} (x)| \leq 1$ для $\forall x \in \setR \Rightarrow$ по теореме Лебега
+    При этом $|f_{\epsilon} (x)| \leq 1$ для $\forall x \in \setR \implies$ по теореме Лебега
     \begin{align*}
       \int\limits_{\setR} f_\epsilon (x) dF(x) \todown{\epsilon \to 0} 
       \int\limits_{\setR} I_{(a, b]} dF(x) = F(b) - F(a)
@@ -463,7 +463,7 @@
       F(b) - F(a) = G(b) - G(a)
     \end{align*}
 
-    Устремим $a \to -\infty, \Rightarrow \forall x \in \setR$ 
+    Устремим $a \to -\infty, \implies \forall x \in \setR$ 
     \begin{align*}
       F(x) = G(x)
     \end{align*}
@@ -477,7 +477,7 @@
     х.ф. 
     \begin{align*}
       &\phi_{\xi_j}(t) = e^{i a_j t - \frac{1}{2} \sigma_j^2 t^2}\\
-      &\Rightarrow \phi_{\xi_1 + \xi_2} (t) = \expl{нез.} = \phi_{\xi_1}(t) \phi_{\xi_2} (t) 
+      &\implies \phi_{\xi_1 + \xi_2} (t) = \expl{нез.} = \phi_{\xi_1}(t) \phi_{\xi_2} (t) 
       = e^{i(a_1 + a_2) t - \frac{1}{2} t^2 (\sigma_1^2 + \sigma_2^2)}
     \end{align*}
     -- х.ф $N(a_1 + a_2, \sigma_1^2 + \sigma_2^2)$

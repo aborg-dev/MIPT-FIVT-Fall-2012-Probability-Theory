@@ -32,7 +32,7 @@
     E(\xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k}
   \end{align*}
 
-  Но $I_{A_k}$ завиcит от $S_1 \ldots S_k \Rightarrow S_k I_{A_k}$ 
+  Но $I_{A_k}$ завиcит от $S_1 \ldots S_k \implies S_k I_{A_k}$ 
   не зависит от $\xi_{k + 1} \ldots \xi_n$
 
   Следовательно, второе слагаемое
@@ -40,7 +40,7 @@
   \begin{align*}
     &E S_k I_{A_k} (\xi_{k + 1} + \ldots + \xi_n) = 
     E S_k E(\xi_{k + 1} + \ldots \xi_n) = 0 \quad (\forall i: E \xi_i = 0)\\
-    &\Rightarrow E S_n^2 I_{A_k} = E S_k^2 I_{A_k} + E(\xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k} 
+    &\implies E S_n^2 I_{A_k} = E S_k^2 I_{A_k} + E(\xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k} 
     \geq E S_k^2 I_{A_k} \geq \epsilon^ 2 E I_{A_k} = \epsilon^2 P(A_k)
   \end{align*}
 
@@ -57,12 +57,12 @@
 
   Обозначим $S_n = \sum\limits_{k = 1}^{n} \xi_k$. 
   Тогда $\sum\limits_{k = 1}^{\infty} \xi_k$ сходится п.н. 
-  $\Leftrightarrow$ (критерий Коши) $\Leftrightarrow$
+  $\iff$ (критерий Коши) $\iff$
 
-  $\Leftrightarrow$ $\{ S_n,\; n \in \setN \}$ фундаментальна с вероятностью 1 
-  $\Leftrightarrow$ (критерий фундаментальности) $\Leftrightarrow$
+  $\iff$ $\{ S_n,\; n \in \setN \}$ фундаментальна с вероятностью 1 
+  $\iff$ (критерий фундаментальности) $\iff$
 
-  $\Leftrightarrow$ для $\forall \epsilon > 0: P(\sup\limits_{k \geq n} |S_k - S_n| \geq \epsilon) 
+  $\iff$ для $\forall \epsilon > 0: P(\sup\limits_{k \geq n} |S_k - S_n| \geq \epsilon) 
   \todown{n \to \infty} 0$
 
   Оценим её: Рассмотрим.
@@ -147,7 +147,7 @@
       \frac{1}{b_n} \sum_{j = 1}^{n} S_{j - 1} a_j \todown{n \to \infty} S
     \end{align*}
 
-    $\Rightarrow$ их разность стремится к нулю.
+    $\implies$ их разность стремится к нулю.
   \end{proof}
 
 \end{lemma}
@@ -183,7 +183,7 @@
       \sum_{k = 1}^{\infty} \frac{D \xi_k}{b_k^2} < +\infty
     \end{align*}
 
-    $\Rightarrow$ по теореме о сходимости ряда, ряд $\sum\limits_k \eta_k$ сходится п.н.
+    $\implies$ по теореме о сходимости ряда, ряд $\sum\limits_k \eta_k$ сходится п.н.
     
     Но по лемме Кронекера 
     $\frac{1}{b_n} \sum\limits_{k = 1}^{n} b_k \pars{\frac{\xi_k - E \xi_k}{b_k}}$ 
@@ -216,7 +216,7 @@
   \end{align*}
 
   \begin{proof}
-    Возьмем $b_n = n \Rightarrow b_n > 0,\; b_n \uparrow +\infty$.
+    Возьмем $b_n = n \implies b_n > 0,\; b_n \uparrow +\infty$.
 
     Тогда
     \begin{align*}
@@ -231,7 +231,7 @@
 
     Если же $E \xi_n = a$, то $E S_n = n - a$
     \begin{align*}
-      \frac{S_n}{n} - a \toae 0 \Leftrightarrow \frac{S_n}{n} \toae a
+      \frac{S_n}{n} - a \toae 0 \iff \frac{S_n}{n} \toae a
     \end{align*}
 
   \end{proof}
@@ -247,7 +247,7 @@
 
 \mysection{Предельный переход под знаком $E$}
 
-Вопрос: $\xi_n \toae \xi \Rightarrow  E\xi \rightarrow E\xi$?
+Вопрос: $\xi_n \toae \xi \implies  E\xi \rightarrow E\xi$?
 
 \begin{theorem}[О монотонной сходимости]~
 
@@ -322,12 +322,12 @@
   \begin{proof}
     Заметим, что $\xi = \lim\limits_n \xi_n = \limdown_n \xi_n = \limup_n \xi_n$ п.н.
 
-    $\Rightarrow$ по лемме Фату
+    $\implies$ по лемме Фату
 
     \begin{align*}
       &E \xi = E \limdown_n \xi_n \leq \limdown_n E \xi_n \leq \limup_n E\xi_n \leq 
       E \limup_n \xi_n = E\xi\\
-      &\Rightarrow \lim_n E\xi_n = E\xi
+      &\implies \lim_n E\xi_n = E\xi
     \end{align*}
 
     Конечность $E \xi$ следует из того, что $|\xi| \leq \eta$ п.н. и конечности $E \eta$
@@ -335,7 +335,7 @@
     Для обоснования сходимости в $L^1$ достаточно взять $\psi_n = |\xi_n - \xi|$. 
 
     Тогда $|\psi_n| \leq 2 |\eta|$ п.н.
-    и $\psi_n \toae 0 \Rightarrow E \psi_n \to 0$
+    и $\psi_n \toae 0 \implies E \psi_n \to 0$
 
   \end{proof}
 \end{theorem}
@@ -393,7 +393,7 @@
         \end{align*}
         т.к. $\forall n : \sum\limits_{k = n}^{\infty} P(A_k) = +\infty$\\
 
-        $\Rightarrow P(A_n \text{ б.ч.}) = 1$
+        $\implies P(A_n \text{ б.ч.}) = 1$
     \end{enumerate}
   \end{proof}
 \end{lemma}

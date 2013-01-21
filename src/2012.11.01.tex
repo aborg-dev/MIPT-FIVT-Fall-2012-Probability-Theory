@@ -17,18 +17,18 @@
     \begin{proof}~
       \begin{enumerate}[label=\arabic*)]
         \item 
-          $\xi^- , \xi^+ \leq \eta \Rightarrow
+          $\xi^- , \xi^+ \leq \eta \implies
           E \xi^+ = \sup\limits_{0 \leq \xi \leq \xi^+} 
           E \xi \leq \sup\limits_{0 \leq \xi \leq \eta} E \xi = E \eta < +\infty$
 
           Аналогично с $E \xi^-$. Тогда $E \xi = E \xi^+ - E \xi^-$ -- тоже конечно\\
 
         \item 
-          $\xi^+ \leq \eta^+$ и $E \eta^+ < +\infty \Rightarrow$ по доказанному в 1), что \\
-          $E \xi^+ < +\infty \Rightarrow E \xi < +\infty$\\
+          $\xi^+ \leq \eta^+$ и $E \eta^+ < +\infty \implies$ по доказанному в 1), что \\
+          $E \xi^+ < +\infty \implies E \xi < +\infty$\\
 
         \item
-          $(\xi I_A)^+ = \xi^+ I_A \leq \xi^+ \Rightarrow E(\xi I_A)^+$ -- конечно.
+          $(\xi I_A)^+ = \xi^+ I_A \leq \xi^+ \implies E(\xi I_A)^+$ -- конечно.
 
           Аналогично, $E(\xi I_A)^-$ -- тоже конечно.
       \end{enumerate}
@@ -54,30 +54,30 @@
 
       Тогда, если $x_k \neq 0$, то $A_k = \{ \xi = x_k \} \subset \{ \xi \neq 0 \}$
       \begin{align*}
-        &\Rightarrow P(A_k) \leq P(\xi \neq 0) = 0\\
-        &\Rightarrow E \xi = \sum_{k = 1}^{n} x_k P(A_k) = 0
+        &\implies P(A_k) \leq P(\xi \neq 0) = 0\\
+        &\implies E \xi = \sum_{k = 1}^{n} x_k P(A_k) = 0
       \end{align*}
 
       Если $\xi \geq 0$ -- неотрицательная случайная величина, то 
       $E \xi = \sup\limits_{\eta \leq \xi} E \eta$, где $\eta$ -- простая неотрицательная с.в.\\
-      Но для таких $\eta: 0 \leq \eta \leq \xi = 0 \Rightarrow \eta = 0$ п.н.
+      Но для таких $\eta: 0 \leq \eta \leq \xi = 0 \implies \eta = 0$ п.н.
 
       Значит $E \eta = 0$\\
 
       Если $\xi$ -- произвольная случайная величина, то $\xi^+ = 0$ п.н., $\xi^- = 0$ п.н.
 
-      По доказанному $E \xi^+ = E \xi^- = 0 \Rightarrow E \xi = E \xi^+ + E \xi^- = 0$
+      По доказанному $E \xi^+ = E \xi^- = 0 \implies E \xi = E \xi^+ + E \xi^- = 0$
     \end{proof}
 
   \item
     Если $\xi = \eta$ п.н. и $E \eta$ - конечно, то $E \xi$ - конечно и $E \xi = E \eta$
 
     \begin{proof}
-      Рассмотрим $A = \{\xi \neq \eta\}$. Тогда $I_A = 0$ п.н. $\Rightarrow \xi I_A = 0$ п.н.,
+      Рассмотрим $A = \{\xi \neq \eta\}$. Тогда $I_A = 0$ п.н. $\implies \xi I_A = 0$ п.н.,
       $\eta I_A = 0$ п.н.
       \begin{align*}
         &\xi = \xi I_A + \xi I_{\,\comp{A}} = \xi I_A + \eta I_{\,\comp{A}} 
-        \Rightarrow E \xi \text{ конечно и }\\
+        \implies E \xi \text{ конечно и }\\
         &E \xi = E \xi I_A + E \eta I_{\,\comp{A}} = E \eta I_A + E \eta I_{\,\comp{A}} = E \eta
       \end{align*}
     \end{proof}
@@ -111,12 +111,12 @@
     \begin{proof}
       Рассмотрим $B \{ \xi > \eta \}$. Тогда $E \eta I_B \leq E \xi I_B \leq E \eta I_B$
 
-      Тогда $E \xi I_B = E \eta I_B \Rightarrow E (\xi - \eta) I_B = 0$
-      $\Rightarrow \expl{по свойству 8} \Rightarrow (\xi - \eta) I_B = 0$ п.н.
+      Тогда $E \xi I_B = E \eta I_B \implies E (\xi - \eta) I_B = 0$
+      $\implies \expl{по свойству 8} \implies (\xi - \eta) I_B = 0$ п.н.
 
-      Но $(\xi - \eta) I_B = 0 \Leftrightarrow I_B = 0$
+      Но $(\xi - \eta) I_B = 0 \iff I_B = 0$
 
-      $\Rightarrow I_B = 0$  п.н. и, значит, $P(B) = 0$\\
+      $\implies I_B = 0$  п.н. и, значит, $P(B) = 0$\\
     \end{proof}
 
 \end{enumerate}
@@ -131,14 +131,14 @@
 
 \begin{corollary}
   Случайные величины $\xi_1 \ldots \xi_n$ - независимы в совокупности 
-  $\Leftrightarrow \forall B_1 \ldots B_n \in B(\setR)$ события
+  $\iff \forall B_1 \ldots B_n \in B(\setR)$ события
   $\{ \xi_1 \in B_1 \} \ldots \{ \xi_n \in B_n \}$ - независимы в совокупности.
 \end{corollary}
 
 \begin{theorem}[критерий независимости для функции распределения]~
 
   Случайные величины $\xi_1 \ldots \xi_n$ -- независимы в совокупности 
-  $\Leftrightarrow \forall x_1 \ldots, x_n \in \setR$
+  $\iff \forall x_1 \ldots, x_n \in \setR$
   \begin{align*}
     P(\xi_1 \leq x_1, \ldots, \xi_n \leq x_n) = P(\xi_1 \leq x_1) \ldots P(\xi_n \leq x_n)
   \end{align*}
@@ -149,20 +149,20 @@
 
 \begin{proof}
   $\xi_1 \ldots \xi_n$ -- независимы в совокупности 
-  $\Leftrightarrow \sigma$-алгебры $\setF_{\xi_1} \ldots \setF_{\xi_n}$ -- независимы в совокупности 
-  $\Leftrightarrow \expl{критерий независ. $\sigma$-алгебр} \Leftrightarrow
+  $\iff \sigma$-алгебры $\setF_{\xi_1} \ldots \setF_{\xi_n}$ -- независимы в совокупности 
+  $\iff \expl{критерий независ. $\sigma$-алгебр} \iff
   \pi$-системы порождающие эти $\sigma$-алгебры независимы.
 
   Для $\sigma$-алгебры $\setF_{\xi_i} = \condset{\{ \xi_i \in B \}}{B \in B(\setR) }$ 
   такой $\pi$-системой будет $\condset{\{ \xi_i \leq x \}}{x \in \setR}$.
 
   Это следует из того, что \quad $\sigma((-\infty; x] : x \in \setR) = B(\setR)$\\
-  $\Leftrightarrow \pi$-системы $\condset{\{ \xi_i \leq x_i \}}{x_i \in \setR}$ 
+  $\iff \pi$-системы $\condset{\{ \xi_i \leq x_i \}}{x_i \in \setR}$ 
   -- независимы\\
-  $\Leftrightarrow \forall x_1 \ldots x_n$ - события.
+  $\iff \forall x_1 \ldots x_n$ - события.
   $\{ \xi_1 \leq x_1 \} \ldots \{ \xi_n \leq x_n \}$ независимы в совокупности   
   \begin{align*}
-    \Leftrightarrow P(\xi_1 \leq x_1, \ldots, \xi_n \leq x_n) = 
+    \iff P(\xi_1 \leq x_1, \ldots, \xi_n \leq x_n) = 
     P(\xi_1 \leq x_1) \ldots P(\xi_n \leq x_n), \quad \forall x_1 \ldots x_n \in \setR
   \end{align*}
 \end{proof}
@@ -187,9 +187,9 @@
   то есть $\setF_{\eta_i} \subset \setF_{\xi_i}$
 
   По условию $\setF_{\xi_1} \ldots \setF_{\xi_n}$ -- независимы
-  $\Rightarrow \setF_{\eta_1} \ldots \setF_{\eta_n}$ -- тоже независимы.
+  $\implies \setF_{\eta_1} \ldots \setF_{\eta_n}$ -- тоже независимы.
 
-  $\Leftrightarrow \eta_1 \ldots \eta_n$ -- независимы в совокупности.
+  $\iff \eta_1 \ldots \eta_n$ -- независимы в совокупности.
 \end{proof}
 
 \begin{theorem}
@@ -218,25 +218,25 @@
 
   Тогда $\xi_n \eta_n \uparrow \xi \eta$ и $\forall n: \xi_n$  и $\eta_n$ -- независимы.
   \begin{align*}
-    \Rightarrow E \xi \eta = \lim_{n \to \infty} E\xi_n \eta_n = 
+    \implies E \xi \eta = \lim_{n \to \infty} E\xi_n \eta_n = 
     \expl{независимость $\xi_n$ и $\eta_n$} = \lim_{n \to \infty} E \xi_n E \eta_n = E\xi E\eta
   \end{align*}
 
   Пусть $\xi$ и $\eta$ - произвольные с.в. 
   Тогда $\xi^+, \xi^-$ -- функции от $\xi,\quad \eta^+, \eta^-$ -- функции от $\eta$
-  $\Rightarrow \xi^+, \xi^-$ -- независимы c $\eta^+, \eta^-$
+  $\implies \xi^+, \xi^-$ -- независимы c $\eta^+, \eta^-$
 
   Отсюда получаем 
   \begin{align*}
     &(\xi \eta)^+ = \xi^+ \eta^+ + \xi^- \eta^- 
-    \Rightarrow E(\xi \eta)^+ = E (\xi^+ \eta^+) + E(\xi^- \eta^-) =\\
+    \implies E(\xi \eta)^+ = E (\xi^+ \eta^+) + E(\xi^- \eta^-) =\\
     &= \expl{независимость $\xi^+$ с $\eta^+$ и $\xi^-$ с $\eta^-$} 
     = E\xi^+ E\eta^+ + E\xi^- E\eta^-
   \end{align*}
 
   Аналогично $E(\xi \eta)^- = E\xi^+ E\eta^- + E\xi^- E\eta^+$
 
-  $\Rightarrow E \xi \eta$ конечно и
+  $\implies E \xi \eta$ конечно и
   $E \xi \eta = E\xi^+ \eta^+ + E \xi^- E \eta^- - E \xi^+ \eta^- - E \xi^- E\eta^+ 
   = E \xi E \eta$
   
@@ -289,7 +289,7 @@
 
     \item 
       $|\rho(\xi, \eta)| \leq 1$, 
-      причем $\rho(\xi, \eta) = 1 \Leftrightarrow \xi$ и $\eta$ -- п.н. линейно зависимы.
+      причем $\rho(\xi, \eta) = 1 \iff \xi$ и $\eta$ -- п.н. линейно зависимы.
   \end{enumerate}
 
 \end{lemma}
@@ -305,7 +305,7 @@
         f(\lambda) = E(\xi + \lambda \eta)^2 \geq 0
       \end{align*}
       Но $f(\lambda) = E \xi^2 + 2E \xi \eta \lambda + \lambda^2 E \eta^2 \geq 0$
-      $\Leftrightarrow$ дискриминант $\leq 0$, т.е.
+      $\iff$ дискриминант $\leq 0$, т.е.
       $4 [(E \xi \eta)^2 - E \xi^2 E\eta^2] \leq 0$
 
     \item 
@@ -313,15 +313,15 @@
 
       Тогда $\cov(\xi, \eta) = E \xi_1 \eta_1,\quad D \xi = E \xi_1^2,\quad D \eta = E\eta_1^2$
 
-      $\Rightarrow |\rho(\xi, \eta)| = 
+      $\implies |\rho(\xi, \eta)| = 
       \walls{\frac{E \xi_1 \eta_1}{\sqrt{E \xi_1^2 E\eta_1^2}}} \leq 1$, 
       по нер-ву Коши-Буняковского.
 
-      При этом $|\rho(\xi, \eta)| = 1 \Leftrightarrow$ дискриминант $= 0 
-      \Leftrightarrow \exists ! \lambda_0 \in \setR$ т.ч. $f(\lambda_0) = 0$. 
+      При этом $|\rho(\xi, \eta)| = 1 \iff$ дискриминант $= 0 
+      \iff \exists ! \lambda_0 \in \setR$ т.ч. $f(\lambda_0) = 0$. 
       т.е. $E(\xi_1 + \lambda_0 \eta_1)^2 = 0$
 
-      $\Rightarrow \xi_1 + \lambda_0 \eta_1 = 0$ п.н. т.е.
+      $\implies \xi_1 + \lambda_0 \eta_1 = 0$ п.н. т.е.
       \begin{align*}
         \xi = E \xi - \lambda_0 (\eta - E \eta) \text{ п.н.}
       \end{align*}
@@ -381,5 +381,5 @@
     &= \expl{суммируем по $j$} = cov(x_1 \xi_1 + \ldots x_n \xi_n, x_1 \xi_1 + \ldots + x_n \xi_n) 
     = D(x_1 \xi_1 + \ldots + x_n \xi_n) \geq 0
   \end{align*}
-  $\Rightarrow$ неотр. определенная
+  $\implies$ неотр. определенная
 \end{proof}
