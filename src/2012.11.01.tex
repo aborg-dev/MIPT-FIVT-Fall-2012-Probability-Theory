@@ -66,7 +66,7 @@
 
       Если $\xi$ -- произвольная случайная величина, то $\xi^+ = 0$ п.н., $\xi^- = 0$ п.н.
 
-      По доказанному $E \xi^+ = E \xi^- = 0 \Rightarrow E \xi = E \xi^+ + E \xi^- = 0$
+      По доказанному $E \xi^+ = E \xi^- = 0 \Rightarrow E \xi = E \xi^+ - E \xi^- = 0$
     \end{proof}
 
   \item
@@ -91,7 +91,7 @@
       Рассмотрим $A = \{ \xi > 0 \}$  и $A_n = \{ \xi > \frac{1}{n} \}$\\
       Тогда $A_n \uparrow A$. Но 
       \begin{align*}
-        P(A_n) = E I_{A_n} \leq E (\xi_n) I_{A_n} \leq n E \xi = 0
+        P(A_n) = E I_{A_n} \leq E (n\xi I_{A_n}) \leq n E \xi = 0
       \end{align*}
 
       Отсюда в силу непрерывности вероятностной меры
@@ -109,7 +109,7 @@
     Тогда $\xi \leq \eta$ п.н.
 
     \begin{proof}
-      Рассмотрим $B \{ \xi > \eta \}$. Тогда $E \eta I_B \leq E \xi I_B \leq E \eta I_B$
+      Рассмотрим $B = \{ \xi > \eta \}$. Тогда $E \eta I_B \leq E \xi I_B \leq E \eta I_B$
 
       Тогда $E \xi I_B = E \eta I_B \Rightarrow E (\xi - \eta) I_B = 0$
       $\Rightarrow \expl{по свойству 8} \Rightarrow (\xi - \eta) I_B = 0$ п.н.
@@ -193,7 +193,7 @@
 \end{proof}
 
 \begin{theorem}
-  Пусть случайная величина $\xi$ и $\eta$ -- независимы, причем $E \xi$ и $E \eta$ -- конечны. 
+  Пусть случайные величины $\xi$ и $\eta$ -- независимы, причем $E \xi$ и $E \eta$ -- конечны. 
   Тогда $E \xi \eta$ тоже конечно и $E \xi \eta = E \xi E \eta$
 \end{theorem}
 
@@ -245,7 +245,7 @@
 \bigtitle{Дисперсия и ковариация}
 
 \begin{definition}
-  \emph{Дисперсией} с.в. $\xi$ называетют
+  \emph{Дисперсией} с.в. $\xi$ называют
   \begin{equation*}
     D\xi = E(\xi - E\xi)^2, \quad \text{если $E\xi$ существует}
   \end{equation*}
@@ -276,7 +276,7 @@
     \item 
       $cov(\xi, \eta) = E \xi \eta - E\xi E\eta$
 
-      $D\xi = cos(\xi, \xi) = E\xi^2 - (E \xi)^2$
+      $D\xi = cov(\xi, \xi) = E\xi^2 - (E \xi)^2$
 
     \item 
       $D(c\, \xi) = c^2 D \xi, D(\xi + c) = D \xi$
