@@ -3,7 +3,7 @@
 \begin{theorem}[Фубини]~
 
   Пусть $(\Omega, \setF, P)$ -- прямое произведение 
-  $(\Omega, \setF_1, P_1)$ и $(\Omega, \setF_2, P_2)$.
+  $(\Omega_1, \setF_1, P_1)$ и $(\Omega_2, \setF_2, P_2)$.
 
   Пусть с.в $\xi\colon \Omega \to \setR$ т.ч.
   $\int\limits_{\Omega} |\xi(\omega_1, \omega_2)| dP < + \infty$
@@ -221,7 +221,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 
     Пусть $x \in \setC(F)$
 
-    Тогда $\partial((-\infty; x]) = \{ x \}$.
+    Тогда $P\pars{\partial((-\infty; x])} = P\pars{\{ x \}} = 0$.
 
     Значит,
     \begin{align*}
@@ -328,7 +328,7 @@ $P(a \leq S_n \leq b)$ при очень больших $n$ затрудните
   \begin{align*}
     &P(S_n = k) = \comb{n}{k} p^k (1 - p)^{n - k} 
     = \frac{1}{k!} (np)^k \frac{n (n - 1) \ldots (n - k + 1)}{n^k} \, (1 - p)^n (1 - p)^{-k}\\
-    &= \frac{1}{k!} (\lambda + o(1))^k e^{-\lambda} 
+    &\todown{n \to \infty} \frac{1}{k!} (\lambda + o(1))^k e^{-\lambda} 
       \todown{n \to \infty} \frac{1}{k!} \lambda^k e^{-\lambda}
   \end{align*}
 \end{proof}

@@ -39,7 +39,7 @@
 
   \begin{align*}
     &E S_k I_{A_k} (\xi_{k + 1} + \ldots + \xi_n) = 
-    E S_k E(\xi_{k + 1} + \ldots \xi_n) = 0 \quad (\forall i: E \xi_i = 0)\\
+    E S_k I_{A_k} E(\xi_{k + 1} + \ldots \xi_n) = 0 \quad (\forall i: E \xi_i = 0)\\
     &\implies E S_n^2 I_{A_k} = E S_k^2 I_{A_k} + E(\xi_{k + 1} + \ldots + \xi_n)^2 I_{A_k} 
     \geq E S_k^2 I_{A_k} \geq \epsilon^ 2 E I_{A_k} = \epsilon^2 P(A_k)
   \end{align*}
@@ -72,7 +72,8 @@
     &= \lim_{N \to \infty} P(\bigcup_{k = n}^{N + n} \{ |S_k - S_n| \geq \epsilon \})
     = \lim_{N \to \infty} P(\max_{1 \leq k \leq N} |S_{k + n} - S_n| \geq \epsilon)
     = \expl{нер-во Колмогорова} \leq \\
-    &\leq \lim_{N \to \infty} \frac{E(S_{n + N} - S_n)^2}{\epsilon^2} 
+    &\leq \lim_{N \to \infty} \frac{E(S_{n + N} - S_n)^2}{\epsilon^2} = 
+	\expl{независимость, $E\xi_i = 0$}
     = \lim_{N \to \infty} \frac{\sum_{k = n + 1}^{n + N} E \xi_k^2}{\epsilon^2} 
     = \frac{\sum_{k = n + 1}^{\infty} E \xi_k^2}{\epsilon^2} \todown{n \to \infty} 0
   \end{align*}
@@ -90,7 +91,7 @@
 
   Тогда 
   \begin{align*}
-    \frac{1}{b_n} \sum\limits_{k = 1}^{n} a_j x_j \todown{n \to \infty} x
+    \frac{1}{b_n} \sum\limits_{j = 1}^{n} a_j x_j \todown{n \to \infty} x
   \end{align*}
   
   \begin{proof}
@@ -104,10 +105,10 @@
 
     Тогда для $\forall n > n_1$
     \begin{align*}
-      &\walls{\frac{1}{b_n} \sum_{j = 1}^{n} a_j x_j - x} = 
+      &\walls{\pars{\frac{1}{b_n} \sum_{j = 1}^{n} a_j x_j} - x} = 
       \walls{\frac{1}{b_n} \sum_{j = 1}^{n} a_j (x_j - x)} \leq \\
       &\leq \frac{1}{b_n} \sum_{j = 1}^{n_0} a_j |x_j - x| + 
-      \frac{1}{b_n} \sum_{j = n_0 + 1}^{n_1} a_j |x_j - x| \leq 
+      \frac{1}{b_n} \sum_{j = n_0 + 1}^{n} a_j |x_j - x| \leq 
       \frac{\epsilon}{2} + \frac{\epsilon}{2}\; \frac{1}{b_n} \sum_{j = n_0 + 1}^{n} a_j 
       \leq \epsilon
     \end{align*}
@@ -247,7 +248,7 @@
 
 \mysection{Предельный переход под знаком $E$}
 
-Вопрос: $\xi_n \toae \xi \implies  E\xi \rightarrow E\xi$?
+Вопрос: $\xi_n \toae \xi \implies  E\xi_n \rightarrow E\xi$?
 
 \begin{theorem}[О монотонной сходимости]~
 
@@ -378,7 +379,7 @@
       \item
         \begin{align*}
           P(A_n \text{ б.ч.}) = \lim_{n \to \infty} P\pars{\bigcup_{k \geq n} A_k} = 
-          \lim_{n \to \infty} P\pars{1 - \bigcap_{k \geq n} \comp{A}_k}
+          \lim_{n \to \infty} \pars{1 - P\pars{\bigcap_{k \geq n} \comp{A}_k}}
         \end{align*}
 
         Но
