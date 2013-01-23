@@ -246,8 +246,8 @@
 
       $\implies$ по теореме Лебега.
       \begin{align*}
-        E \pars{e^{i t \xi}\, \frac{e^{i h \xi} - 1}{h}} \todown{h \to 0} E(i \xi e^{i t \xi})
-        = \int\limits_{\setR} (i x) e^{i t x} P_\xi (dx) = \phi'_{\xi} (t)
+        \phi'(x) = E \pars{e^{i t \xi}\, \frac{e^{i h \xi} - 1}{h}} \todown{h \to 0} E(i \xi e^{i t \xi})
+        = \int\limits_{\setR} (i x) e^{i t x} P_\xi (dx)
       \end{align*}
 
       Установление формулы для $\phi_{\xi}^{(r)}$ при $r > 1$ проводится по индукции аналогично.
@@ -259,7 +259,7 @@
     \item
       Имеет место разложение:
       \begin{align*}
-        e^{i y} = \sum_{k = 0}^{n - 1} \frac{(i t)^k}{k!} 
+        e^{i y} = \sum_{k = 0}^{n - 1} \frac{(i y)^k}{k!} 
         + \frac{(i y)^n}{n!} (\cos \theta_1 y + i \sin \theta_2 y)
       \end{align*}
       где $|\theta_1| \leq 1, |\theta_2| \leq 1$.
@@ -400,6 +400,7 @@
     Пусть $a < b \in \setR$. Для $\forall \epsilon > 0$
     рассмотрим функцию $f_{\epsilon} (x):$
 
+	линейна на $(a; a + \epsilon], [b, b + \epsilon)$, 1 на $[a + \epsilon,b]$, 0 иначе. \\
     Докажем, что 
     \begin{align*}
       \int\limits_{\setR} f_\epsilon (x) d F(x) = \int\limits_{\setR} f_\epsilon dG(x)
@@ -408,7 +409,7 @@
     Рассмотрим отрезок $[-n, n], \; n \in \setN$ т.ч.
     $[-n, n] \supset [a, b + \epsilon]$. 
 
-    По теореме Вейерштрасса $f_\xi (x)$ равномерно приближается тригонометрическими многочленами
+    По теореме Вейерштрасса $f_\xi (x)$ равномерно приближается тригонометрическими многочленами (т.к непрерывна и периодична с периодом 2n на этом отрезке)
     от $\frac{x \pi}{n}$, т.е.
     \begin{align*}
       \exists f_\epsilon^n (x) = \sum_{k \in K} a_k e^{i \frac{k \pi x}{n}}, \; a_k \in \setR, 
@@ -420,23 +421,19 @@
     Заметим, что $f_\epsilon^n (x)$ явл. периодической с периодом $2n$
 
     $\implies$  т.к. $| f_\epsilon^n (x) | \leq 2$ для $\forall x \in [-n, n]$, то 
-    $|f(x)| \leq 1$ и $|f_{\epsilon}^n (x)| \leq 2$, для $\forall x \in \setR$.
+    $|f_{\epsilon}^n (x)| \leq 2$ для $\forall x \in \setR$.
 
     По условию $\forall t \in \setR$
-    \begin{align*}
-      &\int\limits_{\setR} e^{i t x} dF(x) = \int\limits_{\setR} e^{i t x} dG(x)\\
-      &\implies \int\limits_{\setR} f_{\epsilon}^n (x) dF(x) 
-      = \int\limits_{\setR} f_{\epsilon}^n (x) dG(x)
-    \end{align*}
-
+      $\int\limits_{\setR} e^{i t x} dF(x) = \int\limits_{\setR} e^{i t x} dG(x)$,
+      а тогда $\int\limits_{\setR} f_{\epsilon}^n (x) dF(x) = \int\limits_{\setR} f_{\epsilon}^n (x) dG(x)$ по линейности
     Теперь оценим:
     \begin{align*}
       &\walls{ \int\limits_{\setR} f_{\epsilon} (x) dF(x) 
       - \int\limits_{\setR} f_{\epsilon} (x) dG(x) } 
       \leq \walls{ \int\limits_{\setR} f_{\epsilon}^n (x) dF(x) 
       - \int\limits_{\setR} f_{\epsilon}^n (x) dG(x) } + \\
-      &+ \int\limits_{\setR} (f_{\epsilon} (x) - f_{\epsilon}^n (x)) dF(x) 
-      - \int\limits_{\setR} (f_{\epsilon} (x) - f_{\epsilon}^n (x)) dG(x) \leq\\
+      &+ \int\limits_{\setR} \walls{f_{\epsilon} (x) - f_{\epsilon}^n (x)} dF(x) 
+      - \int\limits_{\setR} \walls{f_{\epsilon} (x) - f_{\epsilon}^n (x)} dG(x) \leq\\
       &\leq \frac{1}{n} \int\limits_{[-n, n]} dF(x) + \frac{1}{n} \int\limits_{[-n, n]} dG(x)
       + 2 \pars{\int\limits_{\setR \setminus [-n, n]} dF(x) 
       + \int\limits_{\setR \setminus [-n, n]} dG(x)} \leq\\
