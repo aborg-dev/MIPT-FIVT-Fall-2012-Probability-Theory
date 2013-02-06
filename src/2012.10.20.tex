@@ -116,7 +116,7 @@
 
 \bigtitle{Смысл условия измеримости}
 
-Случайные величины и векторы --- это численные и векторные характеристики случайных экспериментов. Нам нужно уметь вычилсять вероятности вида $P(\xi \leq x)$ или $P(\xi \in [a, b])$
+Случайные величины и векторы --- это численные и векторные характеристики случайных экспериментов. Нам нужно уметь вычислять вероятности вида $P(\xi \leq x)$ или $P(\xi \in [a, b])$
 
 Но $P$ задана формально только на $\sigma$-алгебре $\setF$\\
 Значит, нам нужно требовать, чтобы события вида $\{ \xi \leq x \}$ и 
@@ -181,8 +181,8 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
 
   Пусть $\{ \xi_n, n \in \setN \}$ -- последовательность случайных величин.
 
-  Тогда $\limup_n \xi_n,\; \limdown_n \xi_n,\; \sup\limits_n \xi_n,\; \inf\limits_n \xi_n$ -- 
-  тоже случайная величина. \\
+  Тогда $\limup_{n \to \infty} \xi_n,\; \limdown_{n \to \infty} \xi_n,\; 
+  \sup\limits_n \xi_n,\; \inf\limits_n \xi_n$ -- тоже случайная величина. \\
   (Они могут принимать значения $\pm\infty$)
 
 \end{lemma}
@@ -195,20 +195,20 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
     &\condset{\omega}{\inf_n \xi_n (\omega) \geq x} = 
     \bigcap_{n = 1}^{\infty} \{ \xi_n \geq x \} \in \setF\\
     &\implies \inf_n \xi_n (\omega) \text{ -- случайная величина }\\
-    &\condset{\omega}{\limup_n \xi_n (\omega) \leq x} = 
+    &\condset{\omega}{\limup_{n \to \infty} \xi_n (\omega) \leq x} = 
     \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
-    \bigcap_{n = m}^{\infty} \{ \xi_n \leq x + \frac{1}{k} \} \in \setF\\
-    &\implies \limup_n \xi_n (\omega) \text{ -- случайная величина }\\
-    &\condset{\omega}{\limdown_n \xi_n (\omega) \geq x} = 
+    \bigcap_{n = m}^{\infty} \braces{ \xi_n \leq x + \frac{1}{k} } \in \setF\\
+    &\implies \limup_{n \to \infty} \xi_n (\omega) \text{ -- случайная величина }\\
+    &\condset{\omega}{\limdown_{n \to \infty} \xi_n (\omega) \geq x} = 
     \bigcap_{k = 1}^{\infty} \bigcup_{m = 1}^{\infty} 
-    \bigcap_{n = m}^{\infty} \{ \xi_n \geq x - \frac{1}{k} \} \in \setF\\
-    &\implies \limdown_n \xi_n (\omega) \text{ -- случайная величина }\\
+    \bigcap_{n = m}^{\infty} \braces{ \xi_n \geq x - \frac{1}{k} } \in \setF\\
+    &\implies \limdown_{n \to \infty} \xi_n (\omega) \text{ -- случайная величина }\\
   \end{align*}
 \end{proof}
 
 \mysection{Характеристики случайных величин и векторов}
 
-Распределение случайной величины вектора.
+\bigtitle{Распределение случайной величины вектора.}
 
 \begin{definition}
   Пусть $(\Omega, \setF, P)$ -- вероятностное пространство, $\xi$ - случайная величина на нем. Тогда распределением $\xi$ называется вероятностная мера $P_\xi$ на $(\setR, B(\setR))$, заданная по правилу.
@@ -253,7 +253,7 @@ $\{\xi \in [a, b]\}$ лежали в $\setF$.
       сингулярной, если её функция распределения сингулярна
 
     \item
-      непрерывной, если её функция рапределение непрерывна.
+      непрерывной, если её функция рапределения непрерывна.
   \end{itemize}
 \end{definition}
 

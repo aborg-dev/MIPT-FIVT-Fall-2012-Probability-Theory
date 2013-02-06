@@ -195,13 +195,13 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 
   \begin{enumerate}
     \item $P_n \toup{w} P$
-    \item $\limup_n P_n (A) \leq P(A), \quad \forall \text{ замкнутого } A$
-    \item $\limdown_n P_n (A) \geq P(A), \quad \forall \text{ открытого } A$
+    \item $\limup_{n \to \infty} P_n (A) \leq P(A), \quad \forall \text{ замкнутого } A$
+    \item $\limdown_{n \to \infty} P_n (A) \geq P(A), \quad \forall \text{ открытого } A$
     \item $P_n \implies P$
   \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Эквивательность пределений сходимости]~
+\begin{theorem}[Эквивалентность определений сходимости]~
 
   Пусть $\{ P_n,\; n \in \setN \}, P$ -- вероятностные меры на $\setR$,
   $\{ F_n(x),\; n \in \setN \}, F(x)$ -- соответств. им функции распределения. 
@@ -282,7 +282,7 @@ $dF_{\xi_1, \ldots, \xi_n}(x_1 \ldots x_n) = dF_{\xi_1}(x_1) \ldots dF_{\xi_n}(x
 
 \bigtitle{Смысл сходимости по распределению:}
  
-Это апроксимация распределений.
+Это аппроксимация распределений.
 
 Пусть $\eta$ -- нек. с.в. со "сложным" распр. (сложно вычислить ф.р. $\eta$). 
 
@@ -317,7 +317,7 @@ $P(a \leq S_n \leq b)$ при очень больших $n$ затрудните
 
 \begin{theorem}[Пуассон]~
 
-  Если $n p(n) \to \lambda > 0$, то $\forall k \in \setZ_+$
+  Если $n\,p(n) \to \lambda > 0$, то $\forall k \in \setZ_+$
   \begin{align*}
     P(S_n = k) \todown{n \to \infty} \frac{\lambda^k e^{-\lambda}}{k!}
   \end{align*}
@@ -337,9 +337,10 @@ $P(a \leq S_n \leq b)$ при очень больших $n$ затрудните
   Если $\xi_n \sim Bin(n, p(n))$, где $n p(n) \to \lambda > 0$, 
   то $\xi_n \toup{d} \eta \sim Pois(\lambda)$
 
-  \begin{proof}
+  \begin{proof}~
+
     $\xi_n \toup{d} \eta \iff 
-    \forall x \in \setC(F_{\eta}): F_{\xi_n}(x) \to F_{\eta}(x)$
+    \forall x \in \setC(F_{\eta}): F_{\xi_n}(x) \to F_{\eta}(x)$.
     Но $\xi_n$ и $\eta$ принимает значения $\setZ_+ 
     \implies \forall x \in \setR \setminus \setZ_+:$
 

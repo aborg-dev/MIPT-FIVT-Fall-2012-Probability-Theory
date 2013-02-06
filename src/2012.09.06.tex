@@ -190,14 +190,17 @@
 	\end{enumerate}
 \end{definition}
 
-\begin{theorem}[О непрерывности в нуле вероятностной меры]
+\begin{theorem}[О непрерывности в нуле вероятностной меры]~
+
 	Пусть $(\Omega, \setF)$ - измеримое пространство, 
 	а $P\colon \setF \rightarrow [0, 1]$ удовлетворяет двум свойствам:
 	\begin{enumerate}
 		\item $P(\Omega) = 1$
 		\item $P$ - конечно-аддитивна. 
 	\end{enumerate}
-	Тогда $P$ - вероятностная мера $\iff P$ - непрерывна в нуле(т.е если $A_n  \downarrow \emptyset$, то $P(A_n) \rightarrow 0).$
+	Тогда $P$ - вероятностная мера $\iff P$ - непрерывна в нуле 
+	(т.е если $A_n  \downarrow \emptyset$, то $P(A_n) \to 0$).
+
 \end{theorem}
 
 \begin{proof}~
@@ -211,10 +214,10 @@
 
 	Но ряд $P(A_1) = \sum\limits_{m=1}^{\infty} P(B_m) $ сходится
 	$\implies \sum\limits_{m=n}^{\infty} P(B_m)$ есть остаток сходящего ряда 
-	$\implies P(A_n) \rightarrow 0$\\
+	$\implies P(A_n)~\to~0$\\
+	
 
 	$(\impliedby)$ Пусть $P$ непрерывна в нуле. 
-
 	Покажем её счетную аддитивность:
 
 	Пусть ${A_n, n \in \setN} $ т.ч $A_n \in F\; \forall n$ и 

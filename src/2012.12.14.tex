@@ -46,7 +46,7 @@
   Пусть $\xi = (\xi_1, \ldots, \xi_n) $ -- случайный вектор.
   Его характеристической функцией наз.
   \begin{align*}
-    \phi_{\xi} (t) = E e^{i \langle t \xi \rangle}, \text{ где } t = (t_1, \ldots, t_n) \in \setRn, 
+    \phi_{\xi} (t) = E e^{i \langle t, \xi \rangle}, \text{ где } t = (t_1, \ldots, t_n) \in \setRn, 
     \text{ а } \langle t, \xi \rangle = \sum_{i = 1}^{n} t_i \xi_i
   \end{align*}
 \end{definition}
@@ -59,7 +59,7 @@
     \phi(t) = \int\limits_{\setRn} e^{i \langle t, x \rangle} dF(x),\quad t \in \setRn
   \end{align*}
 
-  Если $P$ -- вероятносная мера в $\setRn$ , то её х.ф. наз
+  Если $P$ -- вероятностная мера в $\setRn$ , то её х.ф. наз
   \begin{align*}
     \phi(t) = \int\limits_{\setRn} e^{i \langle t, x \rangle} P(dx),\quad t \in \setRn
   \end{align*}
@@ -74,7 +74,7 @@
 \begin{example}~
   \begin{enumerate}
     \item
-      $\xi \sim Bern(p)$, бернуллевская с.в.,
+      $\xi \sim Bern(p)$, бернуллиевская с.в.,
       $P(\xi = 1) = p,\quad \; P(\xi = 0) = 1 - p$.
 
       Тогда 
@@ -124,7 +124,7 @@
     \begin{proof}
       \begin{align*}
         \phi_{\eta} (t) = E e^{i t \eta} = E e^{i t (a \xi + b)} 
-        = e^{i t b} E \phi_{i (a t) \xi} = e^{i t b} \phi_\xi (at)
+        = e^{i t b} E e^{i (a t) \xi} = e^{i t b} \phi_\xi (at)
       \end{align*}
     \end{proof}
 
@@ -335,7 +335,7 @@
   \begin{proof}
     Посчитаем моменты с.в. $\xi$.
     \begin{align*}
-      E \xi^m = \int\limits_{\setR} x^m \frac{1}{\sqrt(2 \pi)} e^{\frac{-x^2}{2}} dx
+      E \xi^m = \int\limits_{\setR} x^m \frac{1}{\sqrt{2 \pi}} e^{\frac{-x^2}{2}} dx
     \end{align*}
 
     Если $m$ - нечетно, то $E \xi^m = 0$ 
@@ -468,7 +468,7 @@
 \end{theorem}
 
 \begin{example}
-  Пусть $\xi_1, \xi_2$ -- нез. с.в., $\xi_i \sim N(a_i, \sigma_{i}^2$.
+  Пусть $\xi_1, \xi_2$ -- нез. с.в., $\xi_i \sim N(a_i, \sigma_{i}^2)$.
   Тогда $\xi_1 + \xi_2 \sim N(a_1 + a_2, \sigma_{1}^2 + \sigma_{2}^2)$.
   \begin{proof}
     х.ф. 
